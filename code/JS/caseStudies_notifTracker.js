@@ -24,10 +24,13 @@ function getmeasurements(){
     trackLength = docheight - winheight;
 }
 
+const player = document.querySelector("lottie-player");
+
 function updatePctScrolled ( pctScrolled ) {
   if ( pctScrolled > 75) {
       console.log( pctScrolled );
       localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
+      player.load("https://abusubi.github.io/lottie/page_check.json");
   }
   else {
     console.log('nope')
