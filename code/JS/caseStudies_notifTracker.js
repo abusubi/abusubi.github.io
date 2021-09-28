@@ -24,12 +24,17 @@ function getmeasurements(){
     trackLength = docheight - winheight;
 }
 
+function updatePctScrolled ( pctScrolled ) {
+  console.log( pctScrolled );
+}
+
+var pctScrolled = 0;
 function amountscrolled(){
     var scrollTop = window.pageYOffset || (document.documentElement
         || document.body.parentNode || document.body).scrollTop;
     // gets percentage scrolled (ie: 80 or NaN if tracklength == 0);
     var pctScrolled = Math.floor(scrollTop/trackLength * 100);
-    console.log(pctScrolled + '% scrolled.');
+    updatePctScrolled ( pctScrolled );
 }
 
 getmeasurements();
@@ -38,8 +43,9 @@ window.addEventListener("resize", function(){
     getmeasurements();
 }, false)
 
-const printThrottle = () => {
 window.addEventListener("scroll", function(){
+
+
     clearTimeout(throttlescroll);
         //Trigger scrollPercent on scroll-timeout.
         // throttle code inside scroll to once every 50 milliseconds
@@ -47,13 +53,6 @@ window.addEventListener("scroll", function(){
         amountscrolled();
         //Print Visited- in localstorage and console.
         }, 50)
-}, false)
-}
 
-var printPercent = printThrottle();
-if (printPercent => 75){
-    console.log('Case study marked as visited-');
-}
-else {
-  // do nothing
-}
+
+}, false)
