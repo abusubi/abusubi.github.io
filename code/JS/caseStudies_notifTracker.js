@@ -29,6 +29,7 @@ function amountscrolled(){
         || document.body.parentNode || document.body).scrollTop;
     // gets percentage scrolled (ie: 80 or NaN if tracklength == 0);
     var pctScrolled = Math.floor(scrollTop/trackLength * 100);
+    console.log(pctScrolled + '% scrolled.');
 }
 
 getmeasurements();
