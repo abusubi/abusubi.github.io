@@ -34,7 +34,7 @@ function amountscrolled(){
         console.log('Case study marked as visited-');
     }
     else {
-      // do nothing 
+      // do nothing
     }
 }
 
