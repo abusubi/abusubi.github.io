@@ -25,7 +25,7 @@ function getmeasurements(){
 }
 
 function updatePctScrolled ( pctScrolled ) {
-  if ( pctScrolled => 75) {
+  if ( pctScrolled > '75') {
       console.log( pctScrolled );
   }
   else {
