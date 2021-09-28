@@ -25,7 +25,7 @@ function getmeasurements(){
 }
 
 function updatePctScrolled ( pctScrolled ) {
-  if ( pctScrolled > 70) {
+  if ( pctScrolled > 75) {
       console.log( pctScrolled );
       localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
   }
