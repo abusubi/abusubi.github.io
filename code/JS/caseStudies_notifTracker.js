@@ -31,19 +31,13 @@ function amountscrolled(){
     var pctScrolled = Math.floor(scrollTop/trackLength * 100);
 }
 
-if (amountscrolled() => 75){
-    console.log('Case study marked as visited-');
-}
-else {
-  // do nothing
-}
-
 getmeasurements();
 
 window.addEventListener("resize", function(){
     getmeasurements();
 }, false)
 
+const printThrottle = () => {
 window.addEventListener("scroll", function(){
     clearTimeout(throttlescroll);
         //Trigger scrollPercent on scroll-timeout.
@@ -53,3 +47,12 @@ window.addEventListener("scroll", function(){
         //Print Visited- in localstorage and console.
         }, 50)
 }, false)
+}
+
+var printPercent = printThrottle();
+if (printPercent => 75){
+    console.log('Case study marked as visited-');
+}
+else {
+  // do nothing
+}
