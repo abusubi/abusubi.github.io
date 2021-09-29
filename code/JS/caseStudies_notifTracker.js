@@ -3,11 +3,6 @@
 
 //Check and print percent scrolled.
 //If true, record page with prefix visited- in localstorage.
-const container = document.getElementById('lottie-container');
-
-container.addEventListener('click', () => {
-animation.playSegments([0, 50], true);
-});
 
 function getDocHeight() {
     var D = document;
