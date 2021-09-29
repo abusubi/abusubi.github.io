@@ -3,12 +3,12 @@
 
 //Check and print percent scrolled.
 //If true, record page with prefix visited- in localstorage.
-import lottieWeb from 'https://cdn.skypack.dev/lottie-web';
 const container = document.getElementById('lottie-container');
 
 container.addEventListener('click', () => {
-  animation.playSegments([0, 50], true);
+animation.playSegments([0, 50], true);
 });
+
 function getDocHeight() {
     var D = document;
     return Math.max(
@@ -42,7 +42,6 @@ function updatePctScrolled ( pctScrolled ) {
   if ( pctScrolled > 75) {
       console.log( pctScrolled );
       localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
-      player.load("https://abusubi.github.io/lottie/page_check.json");
   }
   else {
     console.log('nope')
