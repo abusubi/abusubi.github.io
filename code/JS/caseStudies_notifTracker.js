@@ -24,15 +24,6 @@ function getmeasurements(){
     trackLength = docheight - winheight;
 }
 
-var animation = lottieWeb.loadAnimation({
-  container: document.getElementById('lottie-container'),
-  path: 'https://abusubi.github.io/lottie/page_check.json',
-  renderer: 'svg',
-  loop: true,
-  autoplay: true,
-  name: "notif-animation",
-});
-
 function updatePctScrolled ( pctScrolled ) {
   if ( pctScrolled > 75) {
       console.log( pctScrolled );
