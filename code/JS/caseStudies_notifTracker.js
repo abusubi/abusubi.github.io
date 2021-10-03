@@ -58,7 +58,7 @@ function slideInOut() {
 */
 
 var onceSlideNotif = once(
-  slideInOut() {
+  function() {
 	console.log('Fired Once Only!');
   document.getElementById("fixed-notif").className = "slide-in";
   setTimeout(slideOut, 2500);
