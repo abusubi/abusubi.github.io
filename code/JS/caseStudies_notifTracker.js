@@ -39,7 +39,7 @@ function slideOut() {
 
 function slideInOut() {
   document.getElementById("fixed-notif").className = "slide-in";
-  setTimeout(slideOut, 5000);
+  setTimeout(slideOut, 2500);
 }
 
 function updatePctScrolled ( pctScrolled ) {
