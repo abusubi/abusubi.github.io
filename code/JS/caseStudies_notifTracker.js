@@ -67,7 +67,7 @@ var onceSlideNotif = once(
 
 
 function updatePctScrolled ( pctScrolled ) {
-  if ( pctScrolled > 87) {
+  if ( pctScrolled > 76) {
       console.log( pctScrolled );
       localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
       onceSlideNotif();
