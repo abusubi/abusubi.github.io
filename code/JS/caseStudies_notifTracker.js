@@ -40,8 +40,8 @@ function updatePctScrolled ( pctScrolled ) {
       document.getElementById("fixed-notif").className = "slide-in";
   }
   else {
-    console.log('nope')
-    document.getElementById("fixed-notif").className = "slide-out";
+    console.log('nope');
+    document.getElementById("fixed-notif").className = "slide-inactive";
   }
 }
 
