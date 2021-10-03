@@ -33,11 +33,20 @@ function getmeasurements(){
     trackLength = docheight - winheight;
 }
 
+function slideOut() {
+  document.getElementById("fixed-notif").className = "slide-out";
+}
+
+function slideInOut() {
+  document.getElementById("fixed-notif").className = "slide-in";
+  setTimeout(slideOut, 500);
+}
+
 function updatePctScrolled ( pctScrolled ) {
   if ( pctScrolled > 87) {
       console.log( pctScrolled );
       localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
-      document.getElementById("fixed-notif").className = "slide-in";
+      slideInOut();
   }
   else {
     console.log('nope');
