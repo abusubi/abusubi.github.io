@@ -34,7 +34,7 @@ function getmeasurements(){
 }
 
 function updatePctScrolled ( pctScrolled ) {
-  if ( pctScrolled > 90) {
+  if ( pctScrolled > 87) {
       console.log( pctScrolled );
       localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
       document.getElementById("fixed-notif").className = "slide-in";
