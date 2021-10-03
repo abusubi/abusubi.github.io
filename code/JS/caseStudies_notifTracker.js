@@ -13,6 +13,19 @@ $toggle.addEventListener('click', function() {
 });
 */
 
+function once(fn, context) {
+	var result;
+
+	return function() {
+		if(fn) {
+			result = fn.apply(context || this, arguments);
+			fn = null;
+		}
+
+		return result;
+	};
+}
+
 function getDocHeight() {
     var D = document;
     return Math.max(
@@ -37,16 +50,27 @@ function slideOut() {
   document.getElementById("fixed-notif").className = "slide-out";
 }
 
+/*
 function slideInOut() {
   document.getElementById("fixed-notif").className = "slide-in";
   setTimeout(slideOut, 2500);
 }
+*/
+
+var onceSlideNotif = once(
+  slideInOut() {
+	console.log('Fired Once Only!');
+  document.getElementById("fixed-notif").className = "slide-in";
+  setTimeout(slideOut, 2500);
+  }
+);
+
 
 function updatePctScrolled ( pctScrolled ) {
   if ( pctScrolled > 87) {
       console.log( pctScrolled );
       localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
-      slideInOut();
+      onceSlideNotif();
   }
   else {
     console.log('nope');
