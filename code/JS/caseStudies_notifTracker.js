@@ -4,6 +4,15 @@
 //Check and print percent scrolled.
 //If true, record page with prefix visited- in localstorage.
 
+// var $notifSlide = document.getElementById('fixed-notif');
+
+/*
+$toggle.addEventListener('click', function() {
+    var isOpen = $notifSlide.classList.contains('slide-in');
+    $notifSlide.setAttribute('class', isOpen ? 'slide-out' : 'slide-in');
+});
+*/
+
 function getDocHeight() {
     var D = document;
     return Math.max(
@@ -28,9 +37,11 @@ function updatePctScrolled ( pctScrolled ) {
   if ( pctScrolled > 75) {
       console.log( pctScrolled );
       localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
+      document.getElementById("fixed-notif").className = "slide-in";
   }
   else {
     console.log('nope')
+    document.getElementById("fixed-notif").className = "slide-out";
   }
 }
 
