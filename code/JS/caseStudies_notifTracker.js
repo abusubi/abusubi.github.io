@@ -27,7 +27,7 @@ function isInViewport(element) {
   );
 }
 
-console.log(isInViewport);
+console.log(isInViewport());
 
 
 //ONCE FUNCTION
