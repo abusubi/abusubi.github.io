@@ -13,6 +13,24 @@ $toggle.addEventListener('click', function() {
 });
 */
 
+//highlighted-color color-yellow
+
+// DETERMINE IF ELEMENT IS IN THE VISIBLE VIEWPORT
+function isInViewport(element) {
+  var rect = element.getBoundingClientRect();
+	var readingConfirm = document.getElementsByClassName("highlighted-color color-yellow");
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || readingConfirm.clientHeight) &&
+    rect.right <= (window.innerWidth || readingConfirm.clientWidth)
+  );
+}
+
+console.log(isInViewport);
+
+
+//ONCE FUNCTION
 function once(fn, context) {
 	var result;
 
@@ -26,6 +44,7 @@ function once(fn, context) {
 	};
 }
 
+//DOC HEIGHT AND MEASUREMENTS
 function getDocHeight() {
     var D = document;
     return Math.max(
@@ -57,6 +76,7 @@ function slideInOut() {
 }
 */
 
+//SLIDE NOTIF AND DECLARE ONLY ONCE
 var onceSlideNotif = once(
   function() {
 	console.log('Fired Once Only!');
@@ -64,7 +84,6 @@ var onceSlideNotif = once(
   setTimeout(slideOut, 2500);
   }
 );
-
 
 function updatePctScrolled ( pctScrolled ) {
   if ( pctScrolled > 76) {
@@ -89,6 +108,7 @@ function amountscrolled(){
 
 getmeasurements();
 
+//SCROLL EVENT LISTENERS & ADJUSTMENTS
 window.addEventListener("resize", function(){
     getmeasurements();
 }, false)
