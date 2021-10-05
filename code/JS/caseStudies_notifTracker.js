@@ -82,7 +82,7 @@ var onceSlideNotif = once(
   function() {
 	console.log('Fired Once Only!');
   document.getElementById("notif_container").className = "slide-in";
-  setTimeout(slideOut, 2500);
+  setTimeout(slideOut, 4000);
   }
 );
 
