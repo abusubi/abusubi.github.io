@@ -92,7 +92,7 @@ var yellowThanks = document.getElementsByClassName('highlighted-color color-yell
 var yellowThanks = document.querySelectorAll(".highlighted-color.color-yellow'");
 // Get it's position in the viewport
 var bounding = yellowThanks.getBoundingClientRect();
-console.log(yellowThanks);
+console.log(bounding);
 
 function updatePctScrolled ( pctScrolled ) {
   if ( pctScrolled > 76) {
