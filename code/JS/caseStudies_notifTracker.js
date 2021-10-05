@@ -112,7 +112,7 @@ getmeasurements();
 //SCROLL EVENT LISTENERS & ADJUSTMENTS
 window.addEventListener("resize", function(){
     getmeasurements();
-}, false)
+}, false);
 
 window.addEventListener("scroll", function(){
 
@@ -126,4 +126,11 @@ window.addEventListener("scroll", function(){
         }, 50)
 
 
-}, false)
+}, false);
+
+// INSERT NOTIFICATION VARIABLES
+//  document.getElementById("cases_remaining").innerHTML = notifPrint + ' Cases Remaining';
+
+document.addEventListener("DOMContentLoaded", function(){
+  document.getElementsByClassName("page_title").innerHTML = document.title;
+});
