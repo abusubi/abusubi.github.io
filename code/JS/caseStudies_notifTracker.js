@@ -15,12 +15,8 @@ $toggle.addEventListener('click', function() {
 
 //highlighted-color color-yellow
 
-// INSERT NOTIFICATION VARIABLES
-document.getElementById("page_title").innerHTML = document.title;
-document.getElementById("cases_remaining").innerHTML = notifPrint + ' Cases Remaining';
-
-
 // DETERMINE IF ELEMENT IS IN THE VISIBLE VIEWPORT
+/*
 function isInViewport(element) {
   var rect = element.getBoundingClientRect();
 	var readingConfirm = document.getElementsByClassName("highlighted-color color-yellow");
@@ -33,7 +29,7 @@ function isInViewport(element) {
 }
 
 console.log(isInViewport());
-
+*/
 
 //ONCE FUNCTION
 function once(fn, context) {
@@ -131,3 +127,7 @@ window.addEventListener("scroll", function(){
 
 
 }, false)
+
+// INSERT NOTIFICATION VARIABLES
+document.getElementById("page_title").innerHTML = document.title;
+document.getElementById("cases_remaining").innerHTML = notifPrint + ' Cases Remaining';
