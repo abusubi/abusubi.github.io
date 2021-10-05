@@ -4,44 +4,6 @@
 //Check and print percent scrolled.
 //If true, record page with prefix visited- in localstorage.
 
-//is in viewport
-window.addEventListener('load', function() {
-function getFirstSpanWithClass(cssClass) {
-  var elements = document.getElementsByTagName('span');
-  for (var i = 0; i < elements.length; i++) {
-    if((' ' + elements[i].className + ' ').indexOf(' ' + cssClass + ' ') > -1) {
-      return elements[i];
-    }
-  }
-}
-
-var span = getFirstSpanWithClass('color-yellow'); // should return your span element.
-/*
-if (span){
-  // in case there is a span on the page, write its innerHTML to console
-  console.log(span.innerHTML);
-  var bounding = span.getBoundingClientRect();
-  console.log(bounding);
-}
-*/
-var isInViewport = function (elem) {
-    var bounding = elem.getBoundingClientRect();
-    return (
-        bounding.top >= 0 &&
-        bounding.left >= 0 &&
-        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-};
-
-window.addEventListener('scroll', function (event) {
-	if (isInViewport(span)) {
-  	console.log('In the viewport!');
-  }
-}, false);
-
-});
-
 //ONCE FUNCTION
 function once(fn, context) {
 	var result;
@@ -90,7 +52,7 @@ var onceSlideNotif = once(
   }
 );
 
-
+/*
 function updatePctScrolled ( pctScrolled ) {
   if ( pctScrolled > 76) {
       console.log( pctScrolled );
@@ -102,6 +64,7 @@ function updatePctScrolled ( pctScrolled ) {
     document.getElementById("notif_container").className = "slide-inactive";
   }
 }
+*/
 
 var pctScrolled = 0;
 function amountscrolled(){
@@ -132,3 +95,44 @@ window.addEventListener("scroll", function(){
 
 
 }, false);
+
+
+// IS IN VIEWPORT
+window.addEventListener('load', function() {
+function getFirstSpanWithClass(cssClass) {
+  var elements = document.getElementsByTagName('span');
+  for (var i = 0; i < elements.length; i++) {
+    if((' ' + elements[i].className + ' ').indexOf(' ' + cssClass + ' ') > -1) {
+      return elements[i];
+    }
+  }
+}
+
+var span = getFirstSpanWithClass('color-yellow'); // should return your span element.
+/*
+if (span){
+  // in case there is a span on the page, write its innerHTML to console
+  console.log(span.innerHTML);
+  var bounding = span.getBoundingClientRect();
+  console.log(bounding);
+}
+*/
+var isInViewport = function (elem) {
+    var bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
+
+window.addEventListener('scroll', function (event) {
+	if (isInViewport(span)) {
+  	console.log('In the viewport!');
+    localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
+    onceSlideNotif();
+  }
+}, false);
+
+});
