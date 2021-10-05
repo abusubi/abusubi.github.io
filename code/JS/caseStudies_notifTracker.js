@@ -86,12 +86,18 @@ var onceSlideNotif = once(
   }
 );
 
+window.addEventListener('load', (event) => {
+  console.log('page is fully loaded');
+});
+
+/*
 //SET UP VIEWPORT SELECTOR
 // Get the color-yellow text.
 var yellow = document.getElementsByClassName('color-yellow');
 // Get it's position in the viewport
 var bounding = yellow.getBoundingClientRect();
 console.log(bounding);
+*/
 
 function updatePctScrolled ( pctScrolled ) {
   if ( pctScrolled > 76) {
