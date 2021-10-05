@@ -4,32 +4,7 @@
 //Check and print percent scrolled.
 //If true, record page with prefix visited- in localstorage.
 
-// var $notifSlide = document.getElementById('fixed-notif');
-
-/*
-$toggle.addEventListener('click', function() {
-    var isOpen = $notifSlide.classList.contains('slide-in');
-    $notifSlide.setAttribute('class', isOpen ? 'slide-out' : 'slide-in');
-});
-*/
-
-//highlighted-color color-yellow
-
-// DETERMINE IF ELEMENT IS IN THE VISIBLE VIEWPORT
-/*
-function isInViewport(element) {
-  var rect = element.getBoundingClientRect();
-	var readingConfirm = document.getElementsByClassName("highlighted-color color-yellow");
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || readingConfirm.clientHeight) &&
-    rect.right <= (window.innerWidth || readingConfirm.clientWidth)
-  );
-}
-
-console.log(isInViewport());
-*/
+//is in viewport
 window.addEventListener('load', function() {
 function getFirstSpanWithClass(cssClass) {
   var elements = document.getElementsByTagName('span');
@@ -47,16 +22,34 @@ if (span){
   var bounding = span.getBoundingClientRect();
   console.log(bounding);
 }
-if (
-	bounding.top >= 0 &&
-	bounding.left >= 0 &&
-	bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
-	bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-) {
-	console.log('In the viewport!');
-} else {
-	console.log('Not in the viewport... whomp whomp');
+
+function yellowScroll() {
+  if (
+  	bounding.top >= 0 &&
+  	bounding.left >= 0 &&
+  	bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
+  	bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+  ) {
+  	console.log('In the viewport!');
+  } else {
+  	console.log('Not in the viewport... whomp whomp');
+  }
 }
+
+
+window.addEventListener("scroll", function(){
+
+
+    clearTimeout(throttlescroll);
+        //Trigger scrollPercent on scroll-timeout.
+        // throttle code inside scroll to once every 50 milliseconds
+        throttlescroll = setTimeout(function(){
+        yellowScroll();
+        //Print Visited- in localstorage and console.
+        }, 50)
+
+
+}, false);
 
 });
 
@@ -99,13 +92,6 @@ function slideOut() {
   document.getElementById("notif_container").className = "slide-out";
 }
 
-/*
-function slideInOut() {
-  document.getElementById("fixed-notif").className = "slide-in";
-  setTimeout(slideOut, 2500);
-}
-*/
-
 //SLIDE NOTIF AND DECLARE ONLY ONCE
 var onceSlideNotif = once(
   function() {
@@ -115,14 +101,6 @@ var onceSlideNotif = once(
   }
 );
 
-/*
-//SET UP VIEWPORT SELECTOR
-// Get the color-yellow text.
-var yellow = document.getElementsByClassName('color-yellow');
-// Get it's position in the viewport
-var bounding = yellow.getBoundingClientRect();
-console.log(bounding);
-*/
 
 function updatePctScrolled ( pctScrolled ) {
   if ( pctScrolled > 76) {
