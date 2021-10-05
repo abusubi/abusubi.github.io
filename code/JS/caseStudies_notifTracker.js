@@ -16,39 +16,28 @@ function getFirstSpanWithClass(cssClass) {
 }
 
 var span = getFirstSpanWithClass('color-yellow'); // should return your span element.
+/*
 if (span){
   // in case there is a span on the page, write its innerHTML to console
   console.log(span.innerHTML);
   var bounding = span.getBoundingClientRect();
   console.log(bounding);
 }
+*/
+var isInViewport = function (elem) {
+    var bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
 
-function yellowScroll() {
-  if (
-  	bounding.top >= 0 &&
-  	bounding.left >= 0 &&
-  	bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
-  	bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-  ) {
+window.addEventListener('scroll', function (event) {
+	if (isInViewport(span)) {
   	console.log('In the viewport!');
-  } else {
-  	console.log('Not in the viewport... whomp whomp');
   }
-}
-
-
-window.addEventListener("scroll", function(){
-
-
-    clearTimeout(throttlescroll);
-        //Trigger scrollPercent on scroll-timeout.
-        // throttle code inside scroll to once every 50 milliseconds
-        throttlescroll = setTimeout(function(){
-        yellowScroll();
-        //Print Visited- in localstorage and console.
-        }, 50)
-
-
 }, false);
 
 });
