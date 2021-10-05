@@ -67,7 +67,7 @@ function getmeasurements(){
 }
 
 function slideOut() {
-  document.getElementById("fixed-notif").className = "slide-out";
+  document.getElementById("notif_container").className = "slide-out";
 }
 
 /*
@@ -81,7 +81,7 @@ function slideInOut() {
 var onceSlideNotif = once(
   function() {
 	console.log('Fired Once Only!');
-  document.getElementById("fixed-notif").className = "slide-in";
+  document.getElementById("notif_container").className = "slide-in";
   setTimeout(slideOut, 2500);
   }
 );
@@ -94,7 +94,7 @@ function updatePctScrolled ( pctScrolled ) {
   }
   else {
     console.log('nope');
-    document.getElementById("fixed-notif").className = "slide-inactive";
+    document.getElementById("notif_container").className = "slide-inactive";
   }
 }
 
