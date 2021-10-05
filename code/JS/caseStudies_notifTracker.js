@@ -127,10 +127,3 @@ window.addEventListener("scroll", function(){
 
 
 }, false);
-
-// INSERT NOTIFICATION VARIABLES
-//  document.getElementById("cases_remaining").innerHTML = notifPrint + ' Cases Remaining';
-
-document.addEventListener("DOMContentLoaded", function(){
-  document.getElementsByClassName("page_title").innerHTML = document.title;
-});
