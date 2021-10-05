@@ -88,7 +88,7 @@ var onceSlideNotif = once(
 
 //SET UP VIEWPORT SELECTOR
 // Get the color-yellow text.
-var yellowThanks = document.getElementsByClassName('highlighted-color color-yellow');
+var yellowThanks = document.getElementsByClassName('color-yellow');
 // Get it's position in the viewport
 var bounding = yellowThanks.getBoundingClientRect();
 console.log(bounding);
