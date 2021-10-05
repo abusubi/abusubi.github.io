@@ -104,13 +104,6 @@ var onceSlideNotif = once(
   }
 );
 
-window.addEventListener('load', (event) => {
-  console.log('page is fully loaded');
-  var yellow = document.getElementsByClassName('color-yellow');
-  var bounding = yellow.getBoundingClientRect();
-  console.log(bounding);
-});
-
 /*
 //SET UP VIEWPORT SELECTOR
 // Get the color-yellow text.
