@@ -30,6 +30,24 @@ function isInViewport(element) {
 
 console.log(isInViewport());
 */
+window.addEventListener('load', function() {
+function getFirstSpanWithClass(cssClass) {
+  var elements = document.getElementsByTagName('span');
+  for (var i = 0; i < elements.length; i++) {
+    if((' ' + elements[i].className + ' ').indexOf(' ' + cssClass + ' ') > -1) {
+      return elements[i];
+    }
+  }
+}
+
+var span = getFirstSpanWithClass('color-yellow'); // should return your span element.
+if (span){
+  // in case there is a span on the page, write its innerHTML to console
+  console.log(span.innerHTML);
+  var bounding = span.getBoundingClientRect();
+  console.log(bounding);
+}
+});
 
 //ONCE FUNCTION
 function once(fn, context) {
