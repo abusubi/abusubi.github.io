@@ -27,8 +27,10 @@ function slideOut() {
 //SLIDE NOTIF AND DECLARE ONLY ONCE
 var onceSlideNotif = once(
   function() {
-  document.getElementById("notif_container").className = "slide-in";
-  setTimeout(slideOut, 5500);
+		console.log('In the viewport!');
+		localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
+  	document.getElementById("notif_container").className = "slide-in";
+  	setTimeout(slideOut, 5500);
   }
 );
 
@@ -127,8 +129,6 @@ var isInViewport = function (elem) {
 
 var yellowNotif = function() {
   if (isInViewport(span)) {
-        console.log('In the viewport!');
-        localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
         onceSlideNotif();
 				return;
       }
@@ -139,7 +139,6 @@ var yellowNotif = function() {
 }
 
 var casehref = window.location.href;
-console.log(casehref);
 var matchHref = casehref.match(/case-studies/)
 console.log(matchHref);
 
