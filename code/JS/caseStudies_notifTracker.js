@@ -83,7 +83,7 @@ getmeasurements();
 window.addEventListener("resize", function(){
     getmeasurements();
 }, false);
-
+/*
 window.addEventListener("scroll", function(){
 
 
@@ -97,7 +97,7 @@ window.addEventListener("scroll", function(){
 
 
 }, false);
-
+*/
 
 // IS IN VIEWPORT
 window.addEventListener('load', function() {
