@@ -160,16 +160,7 @@ else {
 };
 
 if( !casehref.match(/case-studies/) ) {
-          window.removeEventListener("scroll", function(){
-            clearTimeout(throttlescroll);
-                //Trigger scrollPercent on scroll-timeout.
-                // throttle code inside scroll to once every 50 milliseconds
-                throttlescroll = setTimeout(function(){
-                yellowNotif();
-								return;
-                //Print Visited- in localstorage and console.
-                }, 50)
-        }, false);
+          window.removeEventListener("scroll", false);
       }
 else {
   false;
