@@ -156,14 +156,7 @@ if( casehref.match(/case-studies/)) {
         }, false);
       }
 else {
-  false;
-};
-
-if( !casehref.match(/case-studies/) ) {
-          window.removeEventListener("scroll", this.handlescroll, false);
-      }
-else {
-  false;
+	window.removeEventListener("scroll", this.handlescroll, false);
 };
 
 /*
