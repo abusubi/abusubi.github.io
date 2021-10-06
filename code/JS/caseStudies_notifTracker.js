@@ -126,7 +126,7 @@ var isInViewport = function (elem) {
 };
 
 var yellowNotif = function() {
-  if (isInViewport(span)) {
+  if (isInViewport(span) !== null) {
         console.log('In the viewport!');
         localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
         onceSlideNotif();
