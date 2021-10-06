@@ -143,13 +143,14 @@ console.log(casehref);
 var matchHref = casehref.match(/case-studies/)
 console.log(matchHref);
 
-if( casehref.match(/case-studies/) !== null) {
+if( casehref.match(/case-studies/)) {
           window.addEventListener("scroll", function(){
             clearTimeout(throttlescroll);
                 //Trigger scrollPercent on scroll-timeout.
                 // throttle code inside scroll to once every 50 milliseconds
                 throttlescroll = setTimeout(function(){
                 yellowNotif();
+								return;
                 //Print Visited- in localstorage and console.
                 }, 50)
         }, false);
