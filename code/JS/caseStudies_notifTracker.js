@@ -145,13 +145,13 @@ console.log(matchHref);
 
 
 if( casehref.match(/case-studies/)) {
-          window.addEventListener("scroll", function(){
-            setTimeout(yellowNotif(), 500)
-        	}, false);
-      }
-else {
-	false
-};
+          window.addEventListener("scroll", yellowNotif(), false);
+}
+
+if( !casehref.match(/case-studies/)) {
+          window.removeEventListener("scroll", yellowNotif(), false);
+}
+
 
 /*
 if( casehref.match(/case-studies/)) {
