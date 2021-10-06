@@ -126,7 +126,7 @@ var isInViewport = function (elem) {
     );
 };
 
-function yellowNotif() {
+var yellowNotif = function() {
   if (isInViewport(span)) {
         console.log('In the viewport!');
         localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
