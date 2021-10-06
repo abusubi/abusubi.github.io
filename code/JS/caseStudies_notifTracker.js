@@ -143,6 +143,17 @@ console.log(casehref);
 var matchHref = casehref.match(/case-studies/)
 console.log(matchHref);
 
+
+if( casehref.match(/case-studies/)) {
+          window.addEventListener("scroll", function(){
+            setTimeout(yellowNotif(), 50)
+        	}, false);
+      }
+else {
+	false
+};
+
+/*
 if( casehref.match(/case-studies/)) {
           window.addEventListener("scroll", function(){
             clearTimeout(throttlescroll);
@@ -156,9 +167,9 @@ if( casehref.match(/case-studies/)) {
         }, false);
       }
 else {
-	window.removeEventListener("scroll", this.handlescroll, false);
+	false
 };
-
+*/
 /*
 window.addEventListener('scroll', function (event) {
 	if (isInViewport(span)) {
