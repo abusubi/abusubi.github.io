@@ -155,11 +155,10 @@ if( casehref.match(/case-studies/)) {
         }, false);
 }
 
-/*
 if( !casehref.match(/case-studies/)) {
 					window.removeEventListener("scroll", false);
 				}
-*/
+
 /*
 window.addEventListener('scroll', function (event) {
 	if (isInViewport(span)) {
