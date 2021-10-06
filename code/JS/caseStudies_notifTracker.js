@@ -66,6 +66,7 @@ function updatePctScrolled ( pctScrolled ) {
 }
 */
 
+/*
 var pctScrolled = 0;
 function amountscrolled(){
     var scrollTop = window.pageYOffset || (document.documentElement
@@ -74,6 +75,7 @@ function amountscrolled(){
     var pctScrolled = Math.floor(scrollTop/trackLength * 100);
     updatePctScrolled ( pctScrolled );
 }
+*/
 
 getmeasurements();
 
@@ -90,11 +92,6 @@ window.addEventListener("scroll", function(){
         // throttle code inside scroll to once every 50 milliseconds
         throttlescroll = setTimeout(function(){
         amountscrolled();
-        if (isInViewport(span)) {
-          console.log('In the viewport!');
-          localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
-          onceSlideNotif();
-        }
         //Print Visited- in localstorage and console.
         }, 50)
 
@@ -132,10 +129,26 @@ var isInViewport = function (elem) {
     );
 };
 
+function yellowNotif() {
+        console.log('In the viewport!');
+        localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
+        onceSlideNotif();
+}
+
+window.addEventListener("scroll", function(){
+    clearTimeout(throttlescroll);
+        //Trigger scrollPercent on scroll-timeout.
+        // throttle code inside scroll to once every 50 milliseconds
+        throttlescroll = setTimeout(function(){
+        yellowNotif();
+        //Print Visited- in localstorage and console.
+        }, 50)
+}, false);
+
 /*
 window.addEventListener('scroll', function (event) {
 	if (isInViewport(span)) {
-  	console.log('In the viewport!');
+    console.log('In the viewport!');
     localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
     onceSlideNotif();
   }
