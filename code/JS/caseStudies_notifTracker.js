@@ -90,6 +90,11 @@ window.addEventListener("scroll", function(){
         // throttle code inside scroll to once every 50 milliseconds
         throttlescroll = setTimeout(function(){
         amountscrolled();
+        if (isInViewport(span)) {
+          console.log('In the viewport!');
+          localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
+          onceSlideNotif();
+        }
         //Print Visited- in localstorage and console.
         }, 50)
 
@@ -127,6 +132,7 @@ var isInViewport = function (elem) {
     );
 };
 
+/*
 window.addEventListener('scroll', function (event) {
 	if (isInViewport(span)) {
   	console.log('In the viewport!');
@@ -134,5 +140,6 @@ window.addEventListener('scroll', function (event) {
     onceSlideNotif();
   }
 }, false);
+*/
 
 });
