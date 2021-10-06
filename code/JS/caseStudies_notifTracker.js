@@ -18,26 +18,7 @@ function once(fn, context) {
 	};
 }
 
-//DOC HEIGHT AND MEASUREMENTS
-function getDocHeight() {
-    var D = document;
-    return Math.max(
-        D.body.scrollHeight, D.documentElement.scrollHeight,
-        D.body.offsetHeight, D.documentElement.offsetHeight,
-        D.body.clientHeight, D.documentElement.clientHeight
-    );
-}
 
-var docheight = getDocHeight();
-
-var winheight, docheight, trackLength, throttlescroll
-
-function getmeasurements(){
-    winheight = window.innerHeight || (document.documentElement
-       || document.body).clientHeight;
-    docheight = getDocHeight();
-    trackLength = docheight - winheight;
-}
 
 function slideOut() {
   document.getElementById("notif_container").className = "slide-out";
@@ -66,16 +47,36 @@ function updatePctScrolled ( pctScrolled ) {
 }
 */
 
-/*
-var pctScrolled = 0;
+
+//DOC HEIGHT AND MEASUREMENTS
+function getDocHeight() {
+    var D = document;
+    return Math.max(
+        D.body.scrollHeight, D.documentElement.scrollHeight,
+        D.body.offsetHeight, D.documentElement.offsetHeight,
+        D.body.clientHeight, D.documentElement.clientHeight
+    );
+}
+
+var docheight = getDocHeight();
+
+var winheight, docheight, trackLength, throttlescroll
+
+function getmeasurements(){
+    winheight = window.innerHeight || (document.documentElement
+       || document.body).clientHeight;
+    docheight = getDocHeight();
+    trackLength = docheight - winheight;
+}
+
+//var pctScrolled = 0;
 function amountscrolled(){
     var scrollTop = window.pageYOffset || (document.documentElement
         || document.body.parentNode || document.body).scrollTop;
     // gets percentage scrolled (ie: 80 or NaN if tracklength == 0);
     var pctScrolled = Math.floor(scrollTop/trackLength * 100);
-    updatePctScrolled ( pctScrolled );
+//    updatePctScrolled ( pctScrolled );
 }
-*/
 
 getmeasurements();
 
@@ -85,8 +86,6 @@ window.addEventListener("resize", function(){
 }, false);
 /*
 window.addEventListener("scroll", function(){
-
-
     clearTimeout(throttlescroll);
         //Trigger scrollPercent on scroll-timeout.
         // throttle code inside scroll to once every 50 milliseconds
@@ -94,13 +93,11 @@ window.addEventListener("scroll", function(){
         amountscrolled();
         //Print Visited- in localstorage and console.
         }, 50)
-
-
 }, false);
 */
 
 // IS IN VIEWPORT
-window.addEventListener('load', function() {
+//window.addEventListener('load', function() {
 function getFirstSpanWithClass(cssClass) {
   var elements = document.getElementsByTagName('span');
   for (var i = 0; i < elements.length; i++) {
@@ -161,4 +158,4 @@ window.addEventListener('scroll', function (event) {
 }, false);
 */
 
-});
+//});
