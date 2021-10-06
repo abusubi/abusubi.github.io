@@ -146,7 +146,7 @@ console.log(matchHref);
 
 if( casehref.match(/case-studies/)) {
           window.addEventListener("scroll", function(){
-            setTimeout(yellowNotif(), 50)
+            setTimeout(yellowNotif(), 5000)
         	}, false);
       }
 else {
