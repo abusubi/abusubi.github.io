@@ -30,7 +30,7 @@ var onceSlideNotif = once(
 		console.log('In the viewport!');
 		localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
   	document.getElementById("notif_container").className = "slide-in";
-  	qwasssetTimeout(slideOut, 5500);
+  	setTimeout(slideOut, 5500);
   }
 );
 
@@ -154,6 +154,7 @@ if( casehref.match(/case-studies/)) {
                 }, 50)
         }, false);
 }
+
 
 if( !casehref.match(/case-studies/)) {
 					window.removeEventListener("scroll", false);
