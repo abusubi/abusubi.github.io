@@ -142,7 +142,7 @@ console.log(casehref);
 var matchHref = casehref.match(/case-studies/)
 console.log(matchHref);
 
-if( casehref.match(/case-studies/) ) {
+if( casehref.match(/case-studies/) !== null) {
           window.addEventListener("scroll", function(){
             clearTimeout(throttlescroll);
                 //Trigger scrollPercent on scroll-timeout.
