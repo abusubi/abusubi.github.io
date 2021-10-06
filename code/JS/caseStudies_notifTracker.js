@@ -108,6 +108,7 @@ function getFirstSpanWithClass(cssClass) {
 }
 
 var span = getFirstSpanWithClass('color-yellow'); // should return your span element.
+console.log(span);
 /*
 if (span){
   // in case there is a span on the page, write its innerHTML to console
