@@ -143,17 +143,6 @@ console.log(casehref);
 var matchHref = casehref.match(/case-studies/)
 console.log(matchHref);
 
-
-if( casehref.match(/case-studies/)) {
-          window.addEventListener("scroll", yellowNotif(), false);
-}
-
-if( !casehref.match(/case-studies/)) {
-          window.removeEventListener("scroll", yellowNotif(), false);
-}
-
-
-/*
 if( casehref.match(/case-studies/)) {
           window.addEventListener("scroll", function(){
             clearTimeout(throttlescroll);
@@ -165,11 +154,12 @@ if( casehref.match(/case-studies/)) {
                 //Print Visited- in localstorage and console.
                 }, 50)
         }, false);
-      }
-else {
-	false
-};
-*/
+}
+
+if( !casehref.match(/case-studies/)) {
+					window.removeEventListener("scroll"), function(), false);
+				}
+
 /*
 window.addEventListener('scroll', function (event) {
 	if (isInViewport(span)) {
