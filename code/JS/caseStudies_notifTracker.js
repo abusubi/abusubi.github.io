@@ -156,7 +156,23 @@ if( casehref.match(/case-studies/)) {
         }, false);
       }
 else {
-	document.removeEventListener('scroll', this.handleScroll, false);
+  false;
+};
+
+if( !casehref.match(/case-studies/) ) {
+          window.removeEventListener("scroll", function(){
+            clearTimeout(throttlescroll);
+                //Trigger scrollPercent on scroll-timeout.
+                // throttle code inside scroll to once every 50 milliseconds
+                throttlescroll = setTimeout(function(){
+                yellowNotif();
+								return;
+                //Print Visited- in localstorage and console.
+                }, 50)
+        }, false);
+      }
+else {
+  false;
 };
 
 /*
