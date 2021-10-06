@@ -138,8 +138,13 @@ function yellowNotif() {
       }
 }
 
-if (window.location.href.match('\\case-studies\\')) {
-        window.addEventListener("scroll", function(){
+var casehref = window.location.href;
+console.log(casehref);
+var matchHref = casehref.match(/case-studies/)
+console.log(matchHref);
+
+if( casehref.match(/case-studies/) ) {
+          window.addEventListener("scroll", function(){
             clearTimeout(throttlescroll);
                 //Trigger scrollPercent on scroll-timeout.
                 // throttle code inside scroll to once every 50 milliseconds
@@ -151,7 +156,7 @@ if (window.location.href.match('\\case-studies\\')) {
       }
 else {
   false;
-}
+};
 
 /*
 window.addEventListener('scroll', function (event) {
