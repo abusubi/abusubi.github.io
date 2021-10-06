@@ -130,9 +130,15 @@ var isInViewport = function (elem) {
 };
 
 function yellowNotif() {
+  if (isInViewport(span)) {
         console.log('In the viewport!');
         localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
         onceSlideNotif();
+      }
+  else {
+        console.log('nope');
+        document.getElementById("notif_container").className = "slide-inactive";
+      }
 }
 
 window.addEventListener("scroll", function(){
