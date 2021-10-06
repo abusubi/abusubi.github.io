@@ -108,7 +108,6 @@ function getFirstSpanWithClass(cssClass) {
 }
 
 var span = getFirstSpanWithClass('color-yellow'); // should return your span element.
-console.log(span);
 /*
 if (span){
   // in case there is a span on the page, write its innerHTML to console
@@ -139,15 +138,20 @@ function yellowNotif() {
       }
 }
 
-window.addEventListener("scroll", function(){
-    clearTimeout(throttlescroll);
-        //Trigger scrollPercent on scroll-timeout.
-        // throttle code inside scroll to once every 50 milliseconds
-        throttlescroll = setTimeout(function(){
-        yellowNotif();
-        //Print Visited- in localstorage and console.
-        }, 50)
-}, false);
+if (window.location.href.match('\\case-studies\\')) {
+        window.addEventListener("scroll", function(){
+            clearTimeout(throttlescroll);
+                //Trigger scrollPercent on scroll-timeout.
+                // throttle code inside scroll to once every 50 milliseconds
+                throttlescroll = setTimeout(function(){
+                yellowNotif();
+                //Print Visited- in localstorage and console.
+                }, 50)
+        }, false);
+      }
+else {
+  false;
+}
 
 /*
 window.addEventListener('scroll', function (event) {
