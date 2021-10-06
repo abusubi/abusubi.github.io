@@ -5,7 +5,7 @@
 //If true, record page with prefix visited- in localstorage.
 
 //ONCE FUNCTION
-function once(fn, context) {
+var once = function (fn, context) {
 	var result;
 
 	return function() {
@@ -27,7 +27,6 @@ function slideOut() {
 //SLIDE NOTIF AND DECLARE ONLY ONCE
 var onceSlideNotif = once(
   function() {
-	console.log('Fired Once Only!');
   document.getElementById("notif_container").className = "slide-in";
   setTimeout(slideOut, 5500);
   }
