@@ -155,7 +155,7 @@ if( casehref.match(/case-studies/) ) {
                 }, 50)
         }, false);
 }
-}, 10000);
+}, 15000);
 
 if( !casehref.match(/case-studies/)) {
 					window.removeEventListener("scroll", false);
