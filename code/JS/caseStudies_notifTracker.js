@@ -21,6 +21,7 @@ var once = function (fn, context) {
 
 
 function slideOut() {
+	setTimeout(slideOut, 5500);
   document.getElementById("notif_container").className = "slide-out";
 }
 
@@ -30,7 +31,7 @@ var onceSlideNotif = once(
 		console.log('In the viewport!');
 		localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
   	document.getElementById("notif_container").className = "slide-in";
-		await delay(slideOut, 5500);
+  	setTimeout(slideOut, 5500);
   }
 );
 
@@ -152,7 +153,7 @@ if( casehref.match(/case-studies/) ) {
                 yellowNotif();
 								return;
                 //Print Visited- in localstorage and console.
-                }, 50)
+							}, 5500)
         }, false);
 }
 }, 15000);
