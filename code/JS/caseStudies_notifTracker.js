@@ -30,7 +30,7 @@ var onceSlideNotif = once(
 		console.log('In the viewport!');
 		localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
   	document.getElementById("notif_container").className = "slide-in";
-  	setTimeout(slideOut, 5500);
+		await delay(slideOut, 5500);
   }
 );
 
