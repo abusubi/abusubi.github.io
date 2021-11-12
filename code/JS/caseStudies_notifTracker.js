@@ -1,55 +1,30 @@
-//Check if page visited.
-//localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+// GOALS
+// 		• Check and print percent scrolled.
+// 	 	• If yellowtext in viewport, record page as visited- in localstorage.
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-//Check and print percent scrolled.
-//If true, record page with prefix visited- in localstorage.
+///////////////////////////////////////////////////////////////////////////////
+// Symbols
+///////////////////////////////////////////////////////////////////////////////
 
-//ONCE FUNCTION
-var once = function (fn, context) {
-	var result;
-
-	return function() {
-		if(fn) {
-			result = fn.apply(context || this, arguments);
-			fn = null;
+// Run-Once Symbol Function
+		var once = function (fn, context) {
+			var result;
+			return function() {
+				if(fn) {
+					result = fn.apply(context || this, arguments);
+					fn = null;
+				}
+				return result;
+			};
 		}
 
-		return result;
-	};
-}
+///////////////////////////////////////////////////////////////////////////////
+// Viewport Measurements
+///////////////////////////////////////////////////////////////////////////////
 
-
-
-function slideOut() {
-  document.getElementById("notif_container").className = "slide-out";
-}
-
-//SLIDE NOTIF AND DECLARE ONLY ONCE
-var onceSlideNotif = once(
-  function() {
-		console.log('In the viewport!');
-		localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
-  	document.getElementById("notif_container").className = "slide-in";
-  	setTimeout(slideOut, 5500);
-  }
-);
-
-/*
-function updatePctScrolled ( pctScrolled ) {
-  if ( pctScrolled > 76) {
-      console.log( pctScrolled );
-      localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
-      onceSlideNotif();
-  }
-  else {
-    console.log('nope');
-    document.getElementById("notif_container").className = "slide-inactive";
-  }
-}
-*/
-
-
-//DOC HEIGHT AND MEASUREMENTS
+//Retrieve Document Height Function
 function getDocHeight() {
     var D = document;
     return Math.max(
@@ -60,9 +35,9 @@ function getDocHeight() {
 }
 
 var docheight = getDocHeight();
-
 var winheight, docheight, trackLength, throttlescroll
 
+//Retrieve Viewport-Size Function
 function getmeasurements(){
     winheight = window.innerHeight || (document.documentElement
        || document.body).clientHeight;
@@ -70,7 +45,34 @@ function getmeasurements(){
     trackLength = docheight - winheight;
 }
 
-//var pctScrolled = 0;
+getmeasurements();
+
+//Retrieve Viewport-Size on Window Resize
+window.addEventListener("resize", function(){
+    getmeasurements();
+}, false);
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Notification
+///////////////////////////////////////////////////////////////////////////////
+
+//Notification Slide-Out CSS Class-Update Function
+function slideOut() {
+  document.getElementById("notif_container").className = "slide-out";
+}
+
+//Notification Mark-Visited Notification Slide-In-Out Function
+var onceSlideNotif = once(
+  function() {
+		console.log('In the viewport!');
+		localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
+  	document.getElementById("notif_container").className = "slide-in";
+  	setTimeout(slideOut, 5500);
+  }
+);
+
+//Measure Amount-Scrolled Based on Viewport-Size Functoin
 function amountscrolled(){
     var scrollTop = window.pageYOffset || (document.documentElement
         || document.body.parentNode || document.body).scrollTop;
@@ -78,24 +80,6 @@ function amountscrolled(){
     var pctScrolled = Math.floor(scrollTop/trackLength * 100);
 //    updatePctScrolled ( pctScrolled );
 }
-
-getmeasurements();
-
-//SCROLL EVENT LISTENERS & ADJUSTMENTS
-window.addEventListener("resize", function(){
-    getmeasurements();
-}, false);
-/*
-window.addEventListener("scroll", function(){
-    clearTimeout(throttlescroll);
-        //Trigger scrollPercent on scroll-timeout.
-        // throttle code inside scroll to once every 50 milliseconds
-        throttlescroll = setTimeout(function(){
-        amountscrolled();
-        //Print Visited- in localstorage and console.
-        }, 50)
-}, false);
-*/
 
 // IS IN VIEWPORT
 //window.addEventListener('load', function() {
@@ -109,14 +93,7 @@ function getFirstSpanWithClass(cssClass) {
 }
 
 var span = getFirstSpanWithClass('color-yellow'); // should return your span element.
-/*
-if (span){
-  // in case there is a span on the page, write its innerHTML to console
-  console.log(span.innerHTML);
-  var bounding = span.getBoundingClientRect();
-  console.log(bounding);
-}
-*/
+
 var isInViewport = function (elem) {
     var bounding = elem.getBoundingClientRect();
     return (
@@ -138,6 +115,10 @@ var yellowNotif = function() {
       }
 }
 
+///////////////////////////////////////////////////////////////////////////////
+// Trigger Notification on Scroll
+///////////////////////////////////////////////////////////////////////////////
+
 var casehref = window.location.href;
 var matchHref = casehref.match(/case-studies/)
 console.log(matchHref);
@@ -150,25 +131,14 @@ if( casehref.match(/case-studies/) ) {
                 // throttle code inside scroll to once every 50 milliseconds
                 throttlescroll = setTimeout(function(){
                 yellowNotif();
+								setTimeout(slideOut, 5500);
 								return;
                 //Print Visited- in localstorage and console.
-							}, 5500)
+							}, 50)
         }, false);
 }
 }, 15000);
 
-if( !casehref.match(/case-studies/)) {
+if( !casehref.match(/case-studies/) ) {
 					window.removeEventListener("scroll", false);
 				}
-
-/*
-window.addEventListener('scroll', function (event) {
-	if (isInViewport(span)) {
-    console.log('In the viewport!');
-    localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
-    onceSlideNotif();
-  }
-}, false);
-*/
-
-//});
