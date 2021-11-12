@@ -21,7 +21,6 @@ var once = function (fn, context) {
 
 
 function slideOut() {
-	setTimeout(slideOut, 5500);
   document.getElementById("notif_container").className = "slide-out";
 }
 
