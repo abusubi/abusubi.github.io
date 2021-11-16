@@ -108,6 +108,7 @@ var isInViewport = function (elem) {
 var yellowNotif = function() {
   if (isInViewport(span)) {
         onceSlideNotif();
+		  setTimeout(slideOut, 5500);
 				return;
       }
   else {
@@ -131,9 +132,8 @@ setTimeout( function() {
 					// Trigger scrollPercent on scroll-timeout.
 					// Throttle code inside scroll to once every 50 milliseconds
             	clearTimeout(throttlescroll);
-               throttlescroll = setTimeout(function(){
+               throttlescroll = setTimeout( function(){
                		yellowNotif();
-							setTimeout(slideOut, 5500);
 							return;
 					}, 50)
         	}, false);
