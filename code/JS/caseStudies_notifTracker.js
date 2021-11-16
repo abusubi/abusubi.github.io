@@ -1,12 +1,12 @@
-// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+/////////////////////////////////////////////////////////////////////////////////////////
 // GOALS
-// 		• Check and print percent scrolled.
-// 	 	• If yellowtext in viewport, record page as visited- in localstorage.
-// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  • Check and print percent scrolled.
+//  • If yellowtext in viewport, record page as visited- in localstorage.
+/////////////////////////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////////////////////////////
+// ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 // Symbols
-///////////////////////////////////////////////////////////////////////////////
+// ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
 // Run-Once Symbol Function
 		var once = function (fn, context) {
@@ -20,11 +20,11 @@
 			};
 		}
 
-///////////////////////////////////////////////////////////////////////////////
+// ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 // Viewport Measurements
-///////////////////////////////////////////////////////////////////////////////
+// ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
-//Retrieve Document Height Function
+// Retrieve Document Height Function
 function getDocHeight() {
     var D = document;
     return Math.max(
@@ -37,7 +37,7 @@ function getDocHeight() {
 var docheight = getDocHeight();
 var winheight, docheight, trackLength, throttlescroll
 
-//Retrieve Viewport-Size Function
+// Retrieve Viewport-Size Function
 function getmeasurements(){
     winheight = window.innerHeight || (document.documentElement
        || document.body).clientHeight;
@@ -47,7 +47,7 @@ function getmeasurements(){
 
 getmeasurements();
 
-//Retrieve Viewport-Size on Window Resize
+// Retrieve Viewport-Size on Window Resize
 window.addEventListener("resize", function(){
     getmeasurements();
 }, false);
@@ -57,12 +57,12 @@ window.addEventListener("resize", function(){
 // Notification
 ///////////////////////////////////////////////////////////////////////////////
 
-//Notification Slide-Out CSS Class-Update Function
+// Notification Slide-Out CSS Class-Update Function
 function slideOut() {
   document.getElementById("notif_container").className = "slide-out";
 }
 
-//Notification Mark-Visited Notification Slide-In-Out Function
+// Notification Mark-Visited Notification Slide-In-Out Function
 var onceSlideNotif = once(
   function() {
 		console.log('In the viewport!');
@@ -72,24 +72,24 @@ var onceSlideNotif = once(
   }
 );
 
-//Measure Amount-Scrolled Based on Viewport-Size Functoin
+// Measure Amount-Scrolled Based on Viewport-Size Function
 function amountscrolled(){
-    var scrollTop = window.pageYOffset || (document.documentElement
-        || document.body.parentNode || document.body).scrollTop;
-    // gets percentage scrolled (ie: 80 or NaN if tracklength == 0);
+   var scrollTop = window.pageYOffset || (document.documentElement
+   || document.body.parentNode || document.body).scrollTop;
+
+	// gets percentage scrolled (ie: 80 or NaN if tracklength == 0);
     var pctScrolled = Math.floor(scrollTop/trackLength * 100);
-//    updatePctScrolled ( pctScrolled );
+	// updatePctScrolled ( pctScrolled );
 }
 
 // IS IN VIEWPORT
-//window.addEventListener('load', function() {
+// window.addEventListener('load', function() {
 function getFirstSpanWithClass(cssClass) {
   var elements = document.getElementsByTagName('span');
-  for (var i = 0; i < elements.length; i++) {
-    if((' ' + elements[i].className + ' ').indexOf(' ' + cssClass + ' ') > -1) {
-      return elements[i];
-    }
-  }
+   for (var i = 0; i < elements.length; i++) {
+		if((' ' + elements[i].className + ' ').indexOf(' ' + cssClass + ' ') > -1) {
+      return elements[i]; }
+  	}
 }
 
 var span = getFirstSpanWithClass('color-yellow'); // should return your span element.
@@ -115,28 +115,28 @@ var yellowNotif = function() {
       }
 }
 
-///////////////////////////////////////////////////////////////////////////////
+// ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 // Trigger Notification on Scroll
-///////////////////////////////////////////////////////////////////////////////
+// ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
 
 var casehref = window.location.href;
 var matchHref = casehref.match(/case-studies/)
 console.log(matchHref);
 
-setTimeout(function(){
-if( casehref.match(/case-studies/) ) {
-          window.addEventListener("scroll", function(){
-            clearTimeout(throttlescroll);
-                //Trigger scrollPercent on scroll-timeout.
-                // throttle code inside scroll to once every 50 milliseconds
-                throttlescroll = setTimeout(function(){
-                yellowNotif();
-								setTimeout(slideOut, 5500);
-								return;
-                //Print Visited- in localstorage and console.
-							}, 50)
-        }, false);
-}
+setTimeout( function() {
+	if( casehref.match(/case-studies/) ) {
+         window.addEventListener("scroll", function(){
+					// Trigger scrollPercent on scroll-timeout.
+					// Throttle code inside scroll to once every 50 milliseconds
+            	clearTimeout(throttlescroll);
+               throttlescroll = setTimeout(function(){
+               		yellowNotif();
+							setTimeout(slideOut, 5500);
+							return;
+					}, 50)
+        	}, false);
+	}
 }, 15000);
 
 if( !casehref.match(/case-studies/) ) {
