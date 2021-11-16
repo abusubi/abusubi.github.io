@@ -112,7 +112,6 @@ var isInViewport = function (elem) {
 var yellowNotif = function() {
   if (isInViewport(span)) {
         onceSlideNotif();
-		  setTimeout(slideOut, 5500);
 				return;
       }
   else {
