@@ -131,7 +131,7 @@ var matchHref = casehref.match(/case-studies/)
 console.log(matchHref);
 
 var localLink = localStorage.getItem('visited-' + link.pathname)
-console.log(localLink);
+//console.log(localLink);
 
 setTimeout(function() {
 	if (casehref.match(/case-studies/)) {
