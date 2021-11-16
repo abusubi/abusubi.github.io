@@ -57,12 +57,12 @@ window.addEventListener("resize", function(){
 // Notification
 // ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
-// Notification Slide-Out CSS Class-Update Function
+// Notification Slide-Out CSS Class-Update Function.
 function slideOut() {
   document.getElementById("notif_container").className = "slide-out";
 }
 
-// Notification Mark-Visited Notification Slide-In-Out Function
+// Notification Mark-Visited Notification Slide-In-Out Function.
 var onceSlideNotif = once(
   function() {
 		console.log('In the viewport!');
@@ -83,8 +83,11 @@ function amountscrolled(){
 	// updatePctScrolled ( pctScrolled );
 }
 
-// IS IN VIEWPORT
-// window.addEventListener('load', function() {
+// ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+// Check if Items in Viewport
+// ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+// Define "Find Span" symbol function.
 function getFirstSpanWithClass(cssClass) {
   var elements = document.getElementsByTagName('span');
    for (var i = 0; i < elements.length; i++) {
@@ -93,6 +96,7 @@ function getFirstSpanWithClass(cssClass) {
   	}
 }
 
+// Span Variable for "Find Span" symbol function.
 var span = getFirstSpanWithClass('color-yellow'); // should return your span element.
 
 var isInViewport = function (elem) {
