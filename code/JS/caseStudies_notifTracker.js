@@ -66,9 +66,10 @@ function slideOut() {
 var onceSlideNotif = once(
   function() {
 		console.log('In the viewport!');
+		window.removeEventListener("scroll", false);
 		localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
-  	document.getElementById("notif_container").className = "slide-in";
-  	setTimeout(slideOut, 5500);
+	  	document.getElementById("notif_container").className = "slide-in";
+  		setTimeout(slideOut, 5500);
   }
 );
 
