@@ -134,7 +134,7 @@ var localLink = localStorage.getItem('visited-' + link.pathname)
 console.log(localLink);
 
 setTimeout( function() {
-	if( casehref.match(/case-studies/ &&  ) ) {
+	if( casehref.match(/case-studies/ ) {
          window.addEventListener("scroll", function(){
 					// Trigger scrollPercent on scroll-timeout.
 					// Throttle code inside scroll to once every 50 milliseconds
