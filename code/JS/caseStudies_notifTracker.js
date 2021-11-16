@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 
 // ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-// Symbols
+// Symbol: Run Once
 // ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
 // Run-Once Symbol Function
@@ -19,6 +19,7 @@
 				return result;
 			};
 		}
+
 
 // ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 // Viewport Measurements
@@ -66,7 +67,6 @@ function slideOut() {
 var onceSlideNotif = once(
   function() {
 		console.log('In the viewport!');
-		window.removeEventListener("scroll", false);
 		localStorage.setItem('visited-'+window.location.pathname, 'visitedtrue');
 	  	document.getElementById("notif_container").className = "slide-in";
   		setTimeout(slideOut, 5500);
@@ -124,7 +124,6 @@ var yellowNotif = function() {
 // ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 // Trigger Notification on Scroll
 // ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-
 
 var casehref = window.location.href;
 var matchHref = casehref.match(/case-studies/)
