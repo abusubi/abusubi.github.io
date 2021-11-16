@@ -63,6 +63,8 @@ function slideOut() {
   document.getElementById("notif_container").className = "slide-out";
 }
 
+
+
 // Notification Mark-Visited Notification Slide-In-Out Function.
 var onceSlideNotif = once(
   function() {
@@ -128,8 +130,11 @@ var casehref = window.location.href;
 var matchHref = casehref.match(/case-studies/)
 console.log(matchHref);
 
+var localLink = localStorage.getItem('visited-' + link.pathname)
+console.log(localLink);
+
 setTimeout( function() {
-	if( casehref.match(/case-studies/) ) {
+	if( casehref.match(/case-studies/ &&  ) ) {
          window.addEventListener("scroll", function(){
 					// Trigger scrollPercent on scroll-timeout.
 					// Throttle code inside scroll to once every 50 milliseconds
