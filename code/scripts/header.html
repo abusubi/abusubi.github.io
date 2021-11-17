@@ -1,0 +1,116 @@
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js">    </script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Any Google Font']
+    }
+  });
+</script>
+<script>
+
+function clearBlock(el) {
+  const node = el.parentElement.parentElement;
+  node.innerHTML = '';
+  return node;
+}
+
+const SELECTOR = 'code:not([super-embed-seen])';
+function setupEmbeds() {
+
+  document.querySelectorAll(SELECTOR).forEach((node) => {
+    node.setAttribute('super-embed-seen', 1);
+    if (node.innerText.startsWith('super-embed:')) {
+      const code = node.innerText.replace('super-embed:', '');
+      const parentNode = clearBlock(node);
+      parentNode.innerHTML = code;
+      parentNode.querySelectorAll('script').forEach((script) => {
+        if (!script.src && script.innerText) {
+          eval(script.innerText);
+        } else {
+          const scr = document.createElement('script');
+          scr.src = script.src;
+          document.body.appendChild(scr);
+        }
+      })
+    }
+  })
+}
+
+setupEmbeds();
+
+var observer = new MutationObserver(function(mutations) {
+  if (document.querySelector(SELECTOR)) {
+    setupEmbeds();
+  }
+});
+observer.observe(document, {attributes: false, childList: true, characterData: false, subtree:true});
+
+</script>
+
+<script>
+
+
+
+  window.addEventListener('load', function() {
+
+    var intervalID = window.setInterval(notifRefresh, 400);
+    function notifRefresh() {
+
+          //Get and count all visited- items in localstorage.
+          var arr = []; // Array to hold the keys
+          var arrCounter = 0;
+          // Iterate over localStorage and insert the keys that meet the condition into arr
+          for (var i = 0; i < localStorage.length; i++){
+            if (localStorage.key(i).substring(0, 22) == 'visited-/case-studies/') {
+              arr.push(localStorage.key(i));
+              arrCounter++;
+            }}
+          //console.log(arrCounter + ' this is arrCounter');
+          localStorage.setItem('readCaseStudies', arrCounter);
+          const storageLinkCount = localStorage.getItem('landingLinkCount');
+          const readCaseStudies = localStorage.getItem('readCaseStudies');
+          let statusMessage = readCaseStudies + ' of ' + storageLinkCount + ' case studies read.';
+          document.getElementsByClassName("highlighted-color color-pink")[0].innerHTML=statusMessage;
+          /*
+          const caseNotif = storageLinkCount - arrCounter;
+          console.log(caseNotif + ' this is Notification Value.');
+          */
+
+
+          //Calculate Notification Value for Case Studies
+              const caseNotif = () => {
+                var storageCalc = storageLinkCount - arrCounter;
+                if (storageCalc <= 0) {
+                  return '✓';
+                }
+                else {
+                  return storageCalc;
+                }
+              }
+              const notifPrint = caseNotif();
+          //  console.log(notifPrint + ' Case Studies notif calculated in header.');
+
+
+          //Print Case Studies Notification in Menu
+          var notifClass = document.getElementsByClassName("highlighted-background bg-yellow");
+          for (var i = 0; i < notifClass.length; i++) {
+            notifClass[i].innerHTML = notifPrint;
+          }
+
+          function updateNotifVariables(){
+            // FIND CLASS & CHANGE CONTENT
+            pageTitle = document.getElementsByClassName("page_title");
+            casesRem = document.getElementsByClassName("cases_remaining");
+            for (var i = 0; i < pageTitle.length; i++)
+              { pageTitle[i].innerText = document.title; }
+            for (var i = 0; i < casesRem.length; i++)
+              { casesRem[i].innerText = notifPrint }
+          }
+
+          window.addEventListener("load", updateNotifVariables());
+    }
+
+
+  });
+
+</script>
