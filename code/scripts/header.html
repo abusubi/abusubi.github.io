@@ -70,7 +70,6 @@ observer.observe(document, {attributes: false, childList: true, characterData: f
           const storageLinkCount = localStorage.getItem('landingLinkCount');
           const readCaseStudies = localStorage.getItem('readCaseStudies');
           let statusMessage = readCaseStudies + ' of ' + storageLinkCount + ' case studies read.';
-          document.getElementsByClassName("highlighted-color color-pink")[0].innerHTML=statusMessage;
           /*
           const caseNotif = storageLinkCount - arrCounter;
           console.log(caseNotif + ' this is Notification Value.');
@@ -101,10 +100,13 @@ observer.observe(document, {attributes: false, childList: true, characterData: f
             // FIND CLASS & CHANGE CONTENT
             pageTitle = document.getElementsByClassName("page_title");
             casesRem = document.getElementsByClassName("cases_remaining");
+            pinkStatus = document.getElementsByClassName("highlighted-color color-pink");
             for (var i = 0; i < pageTitle.length; i++)
               { pageTitle[i].innerText = document.title; }
             for (var i = 0; i < casesRem.length; i++)
               { casesRem[i].innerText = notifPrint }
+            for (var i = 0; i < pinkStatus.length; i++)
+              { pinkStatus[i].innerText = statusMessage }
           }
 
           window.addEventListener("load", updateNotifVariables());
