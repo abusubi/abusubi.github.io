@@ -1,0 +1,1243 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+}
+
+:root {
+    --color-text-default: rgb(55, 53, 47);
+    --color-text-default-light: rgba(55, 53, 47, 0.6);
+    --color-text-gray: rgb(155, 154, 151);
+    --color-text-brown: rgb(100, 71, 58);
+    --color-text-orange: rgb(217, 115, 13);
+    --color-text-yellow: rgb(223, 171, 1);
+    --color-text-green: rgb(15, 123, 108);
+    --color-text-blue: rgb(11, 110, 153);
+    --color-text-purple: rgb(105, 64, 165);
+    --color-text-pink: rgb(173, 26, 114);
+    --color-text-red: rgb(224, 62, 62);
+    --color-bg-default: rgb(255, 255, 255);
+    --color-bg-gray: rgb(235, 236, 237);
+    --color-bg-brown: rgb(233, 229, 227);
+    --color-bg-orange: rgb(250, 235, 221);
+    --color-bg-yellow: rgb(251, 243, 219);
+    --color-bg-green: rgb(221, 237, 234);
+    --color-bg-blue: rgb(221, 235, 241);
+    --color-bg-purple: rgb(234, 228, 242);
+    --color-bg-pink: rgb(244, 223, 235);
+    --color-bg-red: rgb(251, 228, 228);
+    --color-bg-gray-light: rgba(235, 236, 237, 0.3);
+    --color-bg-brown-light: rgba(233, 229, 227, 0.3);
+    --color-bg-orange-light: rgba(250, 235, 221, 0.3);
+    --color-bg-yellow-light: rgba(251, 243, 219, 0.3);
+    --color-bg-green-light: rgba(221, 237, 234, 0.3);
+    --color-bg-blue-light: rgba(221, 235, 241, 0.3);
+    --color-bg-purple-light: rgba(234, 228, 242, 0.3);
+    --color-bg-pink-light: rgba(244, 223, 235, 0.3);
+    --color-bg-red-light: rgba(251, 228, 228, 0.3);
+    --color-pill-default: rgba(206, 205, 202, 0.5);
+    --color-pill-gray: rgba(155, 154, 151, 0.4);
+    --color-pill-brown: rgba(140, 46, 0, 0.2);
+    --color-pill-orange: rgba(245, 93, 0, 0.2);
+    --color-pill-yellow: rgba(233, 168, 0, 0.2);
+    --color-pill-green: rgba(0, 135, 107, 0.2);
+    --color-pill-blue: rgba(0, 120, 223, 0.2);
+    --color-pill-purple: rgba(103, 36, 222, 0.2);
+    --color-pill-pink: rgba(221, 0, 129, 0.2);
+    --color-pill-red: rgba(255, 0, 26, 0.2);
+    --color-ui-hover-bg: rgba(239, 239, 239);
+    --color-ui-hover-bg-light: rgba(55, 53, 47, 0.03);
+    --color-card-bg: rgb(255, 255, 255);
+    --color-accent-bg: rgb(46, 170, 220);
+    --color-border-default: rgba(235, 236, 237, 0.8);
+    --color-border-dark: rgba(55, 53, 47, 0.16);
+    --column-spacing: 46px;
+    --collection-card-cover-size-small: 172px;
+    --collection-card-cover-size-medium: 260px;
+    --collection-card-cover-size-large: 320px;
+}
+
+@font-face {
+    font-family: "PP Neue Machina";
+    src: url(https://raw.githubusercontent.com/abusubi/fonts/main/header/PPNeueMachina/PPNeueMachina-Regular.woff2) format(woff2), url(https://raw.githubusercontent.com/abusubi/fonts/main/header/PPNeueMachina/PPNeueMachina-Regular.woff) format(woff);
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PP Neue Machina";
+    src: url(https://raw.githubusercontent.com/abusubi/fonts/main/header/PPNeueMachina/PPNeueMachina-Light.woff2) format(woff2), url(https://raw.githubusercontent.com/abusubi/fonts/main/header/PPNeueMachina/PPNeueMachina-Light.woff) format(woff);
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PP Neue Machina";
+    src: url(https://raw.githubusercontent.com/abusubi/fonts/main/header/PPNeueMachina/PPNeueMachina-Ultrabold.woff2) format(woff2), url(https://raw.githubusercontent.com/abusubi/fonts/main/header/PPNeueMachina/PPNeueMachina-Ultrabold.woff) format(woff);
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PP Telegraf";
+    src: url(https://raw.githubusercontent.com/abusubi/fonts/main/body/telegraf/PPTelegraf-UltraLight.woff2) format(woff2), url(https://raw.githubusercontent.com/abusubi/fonts/main/body/telegraf/PPTelegraf-UltraLight.woff) format(woff);
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Pengram";
+    src: url(https://www.quantamagazine.org/fonts/pangram-regular-webfont.woff) format(woff2), url(https://www.quantamagazine.org/fonts/pangram-regular-webfont.woff) format(woff);
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Pengram";
+    src: url(https://https://www.quantamagazine.org/fonts/pangram-medium-webfont.woff2) format(woff2), url(https://www.quantamagazine.org/fonts/pangram-medium-webfont.woff2) format(woff);
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 720px) {
+    html {
+        font-size: 11px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-link-headerfooter-faded: rgb(var(--color-link-headerfooter-faded-src));
+        --color-pill-default: rgba(var(--color-link-headerfooter-faded-src), 0);
+        --column-spacing: 32px;
+        --padding-right: calc(env(safe-area-inset-right) + 250px) !important;
+        --padding-left: calc(env(safe-area-inset-left) + 250px) !important;
+        --transition: all 0.12s ease-in 0s !important;
+        --navbar-height: 100px !important;
+        --color-link-headerfooter: rgb(255 248 233) !important;
+        --color-link-headerfooter-faded-src: 255, 248, 233 !important;
+        --bookmark-opacity: 0.1 !important;
+        --color-primary: #B5A794 !important;
+        --color-border-default: rgba(255, 255, 255, 0.2) !important;
+        --color-ui-hover-bg: rgba(0, 0, 0, 0.02) !important;
+        --color-text-default-light: rgba(255, 255, 255, 0.6) !important;
+        --color-text-default: #FFFFFF !important;
+        --color-text-gray: #626161 !important;
+        --color-text-brown: #6a5d53 !important;
+        --color-text-orange: #EDBD82 !important;
+        --color-text-yellow: var(--color-notif-bg) !important;
+        --color-text-green: #527A6F !important;
+        --color-text-blue: #485789 !important;
+        --color-text-purple: #594C85 !important;
+        --color-text-pink: #A857A0 !important;
+        --color-text-red: #C15C66 !important;
+        --color-bg-default: #0d0802 !important;
+        --color-bg-gray: #9da5bb !important;
+        --color-bg-brown: #483234 !important;
+        --color-bg-orange: #D9B9A0 !important;
+        --color-bg-yellow: #000000 !important;
+        --color-bg-green: #7D958D !important;
+        --color-bg-blue: #646B81 !important;
+        --color-bg-purple: #736D88 !important;
+        --color-bg-pink: #A68EA7 !important;
+        --color-bg-red: #AE7B82 !important;
+        --color-notif-bg: #865336 !important;
+        --color-bg-gray-light: var(--color-bg-gray) !important;
+        --color-bg-brown-light: var(--color-bg-brown) !important;
+        --color-bg-orange-light: var(--color-bg-orange) !important;
+        --color-bg-yellow-light: var(--color-bg-yellow) !important;
+        --color-bg-green-light: var(--color-bg-green) !important;
+        --color-bg-blue-light: var(--color-bg-blue) !important;
+        --color-bg-purple-light: var(--color-bg-purple) !important;
+        --color-bg-pink-light: var(--color-bg-pink) !important;
+        --color-bg-red-light: var(--color-bg-red) !important;
+        --color-pill-gray: rgba(165, 170, 184, 0.7) !important;
+        --color-pill-brown: rgba(147, 134, 135, 0.7) !important;
+        --color-pill-orange: rgba(217, 185, 160, 0.7) !important;
+        --color-pill-yellow: rgba(232, 208, 166, 0.7) !important;
+        --color-pill-green: rgba(125, 149, 141, 0.7) !important;
+        --color-pill-blue: rgba(100, 107, 129, 0.7) !important;
+        --color-pill-purple: rgba(115, 109, 136, 0.7) !important;
+        --color-pill-pink: rgba(166, 142, 167, 0.7) !important;
+        --color-pill-red: rgba(174, 123, 130, 0.7) !important;
+        --p-dark-mode-weight: 200 !important;
+        --p-dark-mode-spacing: 0.06rem !important;
+    }
+}
+
+::selection {
+    background-color: rgba(214, 111, 0, 0.3);
+}
+
+body {
+    animation: fadeIn 1s !important;
+}
+
+h1,
+h2,
+h3,
+.notion-column-list,
+.notion-collection,
+.notion-divider {
+    animation: fadeInUp 1s !important;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    0% {
+        transform: translate3d(0px, 40px, 0px);
+    }
+
+    100% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    0% {
+        transform: translate3d(0px, 40px, 0px);
+    }
+
+    100% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    0% {
+        transform: translate3d(0px, 40px, 0px);
+    }
+
+    100% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+.notion-page__icon,
+.notion-toggle.bg-gray,
+.notion-header__content,
+.notion-property__title__icon-wrapper,
+.notion-breadcrumb__divider,
+.notion-breadcrumb__item,
+.notion-page__properties {
+    display: none !important;
+}
+
+.notion-navbar a[href="/"] {
+    display: flex !important;
+}
+
+.highlighted-background.bg-yellow {
+    position: static !important;
+    background-color: var(--color-notif-bg) !important;
+    padding: 0.1rem !important;
+    border-top-left-radius: 1.88rem !important;
+    border-top-right-radius: 1.88rem !important;
+    border-bottom-right-radius: 1.88rem !important;
+    border-bottom-left-radius: 1.88rem !important;
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    text-align: center !important;
+    color: rgb(0, 0, 0) !important;
+    font-size: 0.85rem !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+#notif_container {
+    transform: translateX(120%);
+    position: fixed !important;
+    background-color: var(--color-bg-default) !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: var(--color-notif-bg) !important;
+    border-top-left-radius: 9px !important;
+    border-top-right-radius: 9px !important;
+    border-bottom-right-radius: 9px !important;
+    border-bottom-left-radius: 9px !important;
+    width: 280px !important;
+    min-width: 280px !important;
+    height: 100px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    min-height: 100px !important;
+    right: 25px !important;
+    top: 25px !important;
+    z-index: 10000 !important;
+}
+
+.close {
+    position: absolute !important;
+    right: 10px !important;
+    top: 10px !important;
+    width: 10px !important;
+    height: 10px !important;
+    opacity: 1 !important;
+}
+
+.vcenter {
+    top: 50%;
+    transform: translateY(-50%) !important;
+}
+
+#meta_container {
+    position: absolute !important;
+    display: flex !important;
+    flex-direction: row !important;
+    width: 245px !important;
+    height: 56px !important;
+    padding-left: 22px !important;
+}
+
+#icon_container.icon_bg {
+    position: static !important;
+    height: 55px !important;
+    width: 55px !important;
+    min-width: 55px !important;
+    background-color: var(--color-notif-bg) !important;
+    border-top-left-radius: 50% !important;
+    border-top-right-radius: 50% !important;
+    border-bottom-right-radius: 50% !important;
+    border-bottom-left-radius: 50% !important;
+}
+
+#icon_container.icon_bg img.case_icon {
+    position: relative !important;
+    width: 26px !important;
+    height: 29px !important;
+    left: 29% !important;
+}
+
+#metadata_container {
+    position: relative !important;
+    margin: auto auto auto 20px !important;
+    align-items: flex-start !important;
+    line-height: 17px !important;
+    display: inline-block !important;
+}
+
+span.marked_read {
+    font-family: "PP Telegraf" !important;
+    font-size: 16px !important;
+    color: var(--color-primary) !important;
+}
+
+span.page_title {
+    font-family: "PP Telegraf" !important;
+    font-size: 12px !important;
+    color: var(--color-primary) !important;
+    letter-spacing: 0.02rem !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+span.cases_string {
+    font-family: "PP Telegraf" !important;
+    font-size: 12px !important;
+    color: var(--color-notif-bg) !important;
+    letter-spacing: 0.02rem !important;
+}
+
+span.cases_remaining {
+    font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "helvetica neue", helvetica, Ubuntu, roboto, noto, arial, sans-serif !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
+    color: var(--color-notif-bg) !important;
+    letter-spacing: 0.02rem !important;
+}
+
+.max-width,
+.super-content,
+.notion-navbar {
+    padding-right: var(--padding-right) !important;
+    padding-left: var(--padding-left) !important;
+}
+
+.super-content {
+    padding-bottom: 50px !important;
+    padding-top: 0px !important;
+}
+
+.notion-header__title {
+    padding: 0px !important;
+}
+
+.max-width {
+    max-width: 100% !important;
+}
+
+.notion-text__content {
+    padding: 2px 0px;
+}
+
+.notion-divider {
+    border-bottom: 1px solid var(--color-border-default) !important;
+}
+
+.notion-image.page-width>figcaption {
+    padding: 15px 0px 0px !important;
+}
+
+.notion-caption {
+    color: var(--color-text-brown);
+    font-weight: normal;
+    padding: 12px 0px !important;
+    font-family: "PP Telegraf" !important;
+}
+
+.notion-pill {
+    margin-left: 2px;
+    font-size: 0.8rem !important;
+    padding: 0.2rem 0.4rem 0.1rem !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: var(--color-border-default) !important;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    margin-right: 12px !important;
+    margin-top: -0.69rem !important;
+    color: var(--color-text-gray) !important;
+}
+
+.notion-heading {
+    padding: 0px;
+}
+
+#page-case-studies .notion-collection__header {
+    display: none !important;
+}
+
+div[id^="page-case-studies-"] p .color-gray {
+    font-family: "PP Telegraf" !important;
+    font-style: normal !important;
+    font-size: 0.9rem !important;
+    font-weight: normal !important;
+}
+
+div[id^="page-case-studies-"] p.notion-text__content {}
+
+div[id^="page-case-studies-"] h2 {
+    position: sticky !important;
+    top: 100px !important;
+}
+
+div[id^="page-case-studies-"] h2 .color-gray {
+    font-size: 0.9375rem !important;
+    text-align: left !important;
+    letter-spacing: 1px !important;
+    float: left !important;
+    white-space: pre-line !important;
+    padding-top: 0px !important;
+    color: var(--color-text-gray) !important;
+    padding-right: 35px !important;
+    line-height: 1.5rem !important;
+}
+
+div[id^="page-case-studies-"] h2 .color-gray::before {
+    content: " ";
+    display: block !important;
+    border-top-width: 1px !important;
+    border-right-width: 1px !important;
+    border-left-width: 1px !important;
+    border-style: solid solid none !important;
+    border-color: var(--color-text-gray) !important;
+    margin-bottom: 15px !important;
+    width: 100% !important;
+}
+
+div[id^="page-case-studies-"] h2 .color-yellow {
+    font-size: 0.9375rem !important;
+    text-align: left !important;
+    letter-spacing: 1px !important;
+    padding-top: 3px !important;
+    float: left !important;
+    white-space: pre-line !important;
+}
+
+div[id^="page-case-studies-"] h2 .color-yellow::before {
+    content: " " !important;
+    display: block !important;
+    border-top-width: 1px !important;
+    border-right-width: 1px !important;
+    border-left-width: 1px !important;
+    border-style: solid solid none !important;
+    border-color: var(--color-text-yellow) !important;
+    margin-bottom: 15px !important;
+    width: 100% !important;
+}
+
+div[id^="page-case-studies-"] h3.notion-heading {
+    font-size: 1.5rem !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    letter-spacing: 1px !important;
+    margin-left: -4px !important;
+}
+
+div[id^="page-case-studies-"] .notion-column-list {
+    flex-wrap: nowrap !important;
+    padding-top: 80px !important;
+}
+
+div[id^="page-case-studies-"] .notion-column {
+    padding: 12px 0px 0px !important;
+}
+
+div[id^="page-case-studies-"] #block-146beda03eac4563a56080086ba44646 {
+    margin-top: 125px !important;
+}
+
+div[id^="#page-case-studies"] .notion-heading {}
+
+div[id^="#page-case-studies"].slide-inactive {
+    transform: translateX(-120%);
+}
+
+.slide-in {
+    animation: slide-in 0.5s forwards;
+}
+
+.slide-out {
+    animation: slide-out 0.5s forwards;
+}
+
+@-webkit-keyframes slide-in {
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes slide-in {
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes slide-in {
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes slide-out {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(120%);
+    }
+}
+
+@-webkit-keyframes slide-out {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(120%);
+    }
+}
+
+@-webkit-keyframes slide-out {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(120%);
+    }
+}
+
+#block-case-studies-articlesync a[data-visited="true"]::before {
+    content: " ";
+    display: block;
+    -webkit-background-size: 103px 15px;
+    background-size: 103px 15px;
+    width: 103px;
+    height: 15px;
+    background-image: url("https://abusubi.github.io/images/data-visted/Read@2x.png");
+    font-size: 0.81rem !important;
+    font-family: system-ui !important;
+    color: var(--color-notif-bg) !important;
+    font-variant-ligatures: normal !important;
+    font-variant-numeric: normal !important;
+    font-variant-caps: all-small-caps !important;
+    font-variant-alternates: normal !important;
+    font-variant-position: normal !important;
+    font-variant-east-asian: normal !important;
+}
+
+#block-case-studies-articlesync a[data-visited="false"]::before {
+    content: " ";
+    display: block;
+    -webkit-background-size: 103px 15px;
+    background-size: 103px 15px;
+    width: 103px;
+    height: 15px;
+    background-image: url("https://abusubi.github.io/images/data-visted/NotRead@2x.png");
+    font-size: 0.81rem !important;
+    font-family: system-ui !important;
+    color: var(--color-notif-bg) !important;
+    font-variant-ligatures: normal !important;
+    font-variant-numeric: normal !important;
+    font-variant-caps: all-small-caps !important;
+    font-variant-alternates: normal !important;
+    font-variant-position: normal !important;
+    font-variant-east-asian: normal !important;
+}
+
+#block-case-studies-articlesync a.notion-link.notion-collection-list__item-anchor {
+    margin-left: 9px;
+}
+
+#block-case-studies-articlesync .notion-property__title .notion-semantic-string {
+    padding: 14px 0px 0px !important;
+}
+
+#block-case-studies-articlesync .notion-collection-list__item {
+    padding-bottom: 0.75em;
+}
+
+div[id^="page-blocks"] h2 {
+    position: sticky !important;
+    top: 120px !important;
+}
+
+#page-blocks .notion-collection-board {
+    grid-template-columns: 1fr 1fr 1fr !important;
+}
+
+.notion-navbar {
+    background: var(--color-bg-default) !important;
+    height: var(--navbar-height) !important;
+    box-shadow: none !important;
+    position: fixed !important;
+}
+
+.notion-navbar>a {
+    padding: 0px !important;
+}
+
+.notion-navbar>a:hover {
+    background-image: none !important;
+}
+
+.notion-breadcrumb__divider {
+    margin: -4px 4px 0px !important;
+}
+
+.notion-navbar__title {
+    overflow: visible !important;
+}
+
+.notion-quote {
+    padding: 0 var(--padding-right) 0 0 !important;
+    height: var(--navbar-height) !important;
+    -webkit-box-pack: end !important;
+    justify-content: flex-end !important;
+    -webkit-box-align: center !important;
+    align-items: center !important;
+    position: fixed !important;
+    font-size: 0.85rem !important;
+    z-index: 9999 !important;
+    display: flex !important;
+    border: none !important;
+    margin: 0px !important;
+    right: 0px !important;
+    top: 0px !important;
+    letter-spacing: 1px !important;
+}
+
+h1,
+h2,
+h3,
+a {
+    font-style: normal;
+    font-family: "PP Neue Machina", serif !important;
+    font-weight: normal !important;
+}
+
+h1 {
+    line-height: 1.4 !important;
+    letter-spacing: 1px !important;
+    font-size: 3.5rem !important;
+    margin-bottom: 0px !important;
+    padding-top: 70px !important;
+    text-align: justify !important;
+}
+
+h1 a {
+    color: var(--color-primary) !important;
+}
+
+h2 {
+    font-size: 1.88rem !important;
+}
+
+h2 .notion-semantic-string .link {
+    color: var(--color-link-headerfooter) !important;
+}
+
+.notion-quote .notion-semantic-string .link {
+    color: var(--color-link-headerfooter) !important;
+}
+
+.notion-semantic-string .link {
+    border: none !important;
+}
+
+.notion-heading {
+    padding-bottom: 20px !important;
+}
+
+.notion-breadcrumb__divider,
+.notion-navbar__title,
+.notion-toggle,
+.notion-to-do,
+p,
+ul,
+ol {
+    font-size: 1.1rem !important;
+}
+
+p {
+    color: var(--color-text-default) !important;
+    font-family: "PP Telegraf" !important;
+    font-style: normal !important;
+    font-weight: var(--p-dark-mode-weight) !important;
+    letter-spacing: var(--p-dark-mode-spacing) !important;
+}
+
+p a {
+    color: var(--color-primary) !important;
+}
+
+p .color-gray {
+    font-weight: normal !important;
+}
+
+p .color-brown {
+    color: var(--color-text-default);
+    font-family: "PP Neue Machina";
+    font-size: 1.3rem;
+    line-height: 0rem;
+    font-weight: normal !important;
+}
+
+span.highlighted-color.color-pink {
+    color: var(--color-notif-bg);
+    padding-left: 4px;
+    margin-top: -15px;
+    padding-bottom: 10px;
+    font-size: 0.9356rem;
+    font-family: "PP Telegraf";
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    animation: fadeInUp 2s !important;
+}
+
+.notion-toggle p,
+.notion-collection-table,
+.notion-collection-card,
+.notion-caption {
+    font-size: 0.9375rem !important;
+}
+
+.notion-collection-list {
+    border: none !important;
+    padding: 0px !important;
+}
+
+.notion-collection-list__item {
+    transition: var(--transition) !important;
+    color: var(--color-primary) !important;
+    font-size: 48px !important;
+    opacity: 0.7 !important;
+    font-family: "PP Neue Machina", serif !important;
+    font-weight: 300 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    -webkit-box-pack: start !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+
+.notion-collection-list__item-content {
+    font-family: "PP Telegraf";
+    font-weight: normal;
+}
+
+.notion-collection-list__item:hover {
+    padding-left: 20px !important;
+    background-image: none !important;
+    opacity: 1 !important;
+}
+
+.notion-property__title .notion-semantic-string>span,
+.notion-collection-gallery,
+.notion-collection-board {
+    border: none !important;
+}
+
+.notion-collection-table td,
+.notion-collection-table th {
+    border: 1px solid var(--color-border-default) !important;
+    vertical-align: middle !important;
+    padding: 12px 20px !important;
+}
+
+.notion-collection-table td:first-of-type,
+.notion-collection-table th:first-of-type {
+    border-left: 1px solid var(--color-border-default) !important;
+}
+
+.notion-collection-table td:last-child,
+.notion-collection-table th:last-child {
+    border-right: 1px solid var(--color-border-default) !important;
+}
+
+.notion-collection-card {
+    background: rgba(var(--color-link-headerfooter-faded-src), 0.05) !important;
+    box-shadow: none !important;
+}
+
+.notion-collection-card {
+    padding: 12px 20px !important;
+    font-size: 18px !important;
+}
+
+.notion-collection-card__property {
+    margin-top: 8px !important;
+}
+
+.notion-collection-card__content {
+    padding: 0px 20px 12px !important;
+    font-size: 18px !important;
+}
+
+.notion-collection__header {
+    margin-bottom: 8px !important;
+}
+
+.notion-collection-gallery {
+    border: none !important;
+}
+
+.notion-semantic-string .code {
+    background: var(--color-border-default) !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    display: inline-block !important;
+    padding: 8px 16px !important;
+    font-size: 16px !important;
+    margin: 8px 0px !important;
+}
+
+.notion-callout {
+    margin-bottom: 12px !important;
+    padding: 20px !important;
+}
+
+.notion-callout__content {
+    font-size: 20px !important;
+}
+
+.notion-callout__icon {
+    -webkit-box-align: center !important;
+    align-items: center !important;
+    padding-bottom: 4px !important;
+    display: flex !important;
+}
+
+.notion-callout.bg-gray-light {
+    background: var(--color-border-default) !important;
+}
+
+.notion-to-do__content {
+    -webkit-box-align: center !important;
+    align-items: center !important;
+}
+
+.notion-to-do__icon {
+    margin: -2px 2px 0px -6px !important;
+    transform: scale(0.7) !important;
+}
+
+.notion-checkbox.checked {
+    background: var(--color-primary) !important;
+    padding: 4px !important;
+}
+
+.notion-bulleted-list,
+.notion-numbered-list {
+    padding-left: calc(1.5em - 12px) !important;
+}
+
+.notion-toggle__summary {
+    font-family: "PP Telegraf";
+    color: var(--color-primary) !important;
+    margin-right: 10rem !important;
+    opacity: 0.65 !important;
+    transition: opacity 0.5s !important;
+}
+
+.notion-toggle__summary:hover {
+    opacity: 1 !important;
+}
+
+.notion-toggle__summary::before {
+    margin: -1px 4px 0px -4px !important;
+    font-size: 1.25em !important;
+    transform: scale(2, 1) !important;
+}
+
+.notion-toggle__summary:hover::before {
+    background-image: none !important;
+}
+
+.notion-toggle__content {
+    padding-left: 0px !important;
+    padding-top: 10px !important;
+}
+
+.notion-bookmark {
+    margin: 8px 0px;
+    animation: fadeInUp 2s !important;
+    border: 2px solid rgba(var(--color-link-headerfooter-faded-src), var(--bookmark-opacity)) !important;
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+.notion-bookmark>a {
+    padding: 35px 35px 45px 45px !important;
+}
+
+.notion-bookmark>a:hover {
+    transition: background 0.3s ease-in 0s !important;
+    background-color: rgba(var(--color-link-headerfooter-faded-src), var(--bookmark-opacity)) !important;
+}
+
+.notion-bookmark__cover img {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.notion-bookmark__content {
+    padding: 10px 45px 10px 10px !important;
+    flex: 1.600000023841858 1 0% !important;
+}
+
+.notion-bookmark__description {
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 2 !important;
+    display: -webkit-box !important;
+    margin: 8px 0px 12px !important;
+    overflow: hidden !important;
+    line-height: 1.6 !important;
+    font-size: 1.15rem !important;
+    height: auto !important;
+}
+
+.notion-bookmark__link>div {
+    margin: 0px 10px 0px 0px !important;
+}
+
+.notion-bookmark__link p {
+    overflow: visible !important;
+    font-size: 1rem !important;
+}
+
+.notion-bookmark__cover {
+    height: auto !important;
+    flex: 1 1 0% !important;
+}
+
+.notion-bookmark__title {
+    line-height: 59px;
+    height: 62px;
+    font-size: 2.32rem !important;
+}
+
+.notion-code>pre {
+    background: rgba(var(--color-link-headerfooter-faded-src), 0.05) !important;
+    font-size: 14px !important;
+    padding: 24px !important;
+}
+
+.notion-code code {
+    color: var(--color-text-default) !important;
+    text-shadow: none !important;
+}
+
+.notion-file {
+    transition: var(--transition) !important;
+}
+
+.notion-file>div {
+    padding: 12px 12px 8px !important;
+    margin: 0px !important;
+}
+
+.notion-file__title {
+    font-size: 20px !important;
+    line-height: 1 !important;
+}
+
+@media (max-width: 1025px) {
+    :root {
+        --navbar-height: 60px !important;
+        --padding-right: 24px !important;
+        --padding-left: 24px !important;
+    }
+
+    .notion-header {
+        width: 100%;
+        margin-bottom: 0px;
+    }
+
+    .notion-header__cover.no-cover {
+        max-height: 140px;
+        height: 80px;
+    }
+
+    p .color-gray {
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        word-wrap: break-word !important;
+        display: block !important;
+        width: 100% !important;
+        min-width: 1px !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    a {
+        font-style: normal;
+        font-family: "PP Neue Machina", serif !important;
+        font-weight: normal !important;
+    }
+
+    #page-blocks .notion-collection-board {
+        grid-template-columns: 1fr !important;
+    }
+
+    .notion-bookmark__title {
+        line-height: 22px;
+        height: 42px;
+        white-space: normal;
+        overflow: hidden;
+        font-weight: 300;
+        font-size: 1.62rem !important;
+    }
+
+    @media (max-width: 720px) {
+        :root {
+            --navbar-height: 60px !important;
+            --padding-right: 24px !important;
+            --padding-left: 24px !important;
+        }
+
+        h1 {
+            font-size: 2.5rem !important;
+        }
+
+        p .color-gray {
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            word-wrap: break-word !important;
+            display: block !important;
+            width: 100% !important;
+            min-width: 1px !important;
+        }
+
+        h2,
+        .notion-collection-list__item {
+            font-size: 1.62rem !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+        }
+
+        div[id^="page-case-studies-"] p {
+            font-style: normal !important;
+            margin-right: 4rem !important;
+            color: var(--color-text-default) !important;
+            font-family: "Pangram" !important;
+            font-weight: 500 !important;
+            letter-spacing: var(--p-dark-mode-spacing) !important;
+            line-height: 1.7rem !important;
+        }
+
+        div[id^="page-case-studies-"] h3 {
+            font-family: Inter !important;
+            margin-bottom: 1rem !important;
+        }
+
+        div[id^="page-case-studies-"] h2 {
+            position: static !important;
+            top: 120px !important;
+            color: var(--text-color-gray) !important;
+            padding-top: 0px !important;
+            padding-bottom: 30px !important;
+        }
+
+        div[id^="page-case-studies-"] h2.color-gray {
+            position: sticky !important;
+            top: 96px !important;
+            font-size: 1rem !important;
+            text-align: left !important;
+            letter-spacing: 1px !important;
+            float: left !important;
+            white-space: pre-line !important;
+            font-family: "PP Telegraf" !important;
+            line-height: 2.1rem !important;
+            font-weight: 100 !important;
+            padding-top: 0px !important;
+            margin-left: -4px !important;
+            color: var(--color-text-gray) !important;
+            margin-right: 10px !important;
+        }
+
+        div[id^="page-case-studies-"] h2 .color-gray::before {}
+
+        #caseStatus {
+            color: var(--color-notif-bg);
+        }
+
+        .notion-breadcrumb__divider,
+        .notion-navbar__title,
+        .notion-quote {
+            font-size: 20px !important;
+        }
+
+        .super-content {
+            padding-top: 40px !important;
+        }
+
+        .notion-quote {
+            padding: 0 var(--padding-right) 20px var(--padding-left) !important;
+            background: var(--color-bg-default) !important;
+            -webkit-box-pack: start !important;
+            justify-content: flex-start !important;
+            top: var(--navbar-height) !important;
+            font-size: 18px !important;
+            width: 100% !important;
+        }
+
+        h1,
+        h2,
+        h3,
+        a {
+            font-style: normal;
+            font-family: "PP Neue Machina", serif !important;
+            font-weight: normal !important;
+        }
+
+        p .color-brown {
+            color: var(--color-text-default);
+            font-family: "PP Neue Machina";
+            font-size: 1.55rem;
+            line-height: 0rem;
+            font-weight: normal !important;
+        }
+
+        p,
+        ul,
+        ol {
+            font-size: 1.35rem !important;
+        }
+
+        #page-blocks .notion-collection-board {
+            grid-template-columns: 1fr !important;
+        }
+
+        .notion-bookmark__title {
+            line-height: 21px;
+            height: 42px;
+            white-space: normal;
+            overflow: hidden;
+            font-size: 1.62rem !important;
+        }
+
+        .notion-bookmark__description {
+            -webkit-box-orient: vertical !important;
+            -webkit-line-clamp: 2 !important;
+            display: -webkit-box !important;
+            margin: 8px 0px 12px !important;
+            overflow: hidden !important;
+            line-height: 1.4 !important;
+            font-size: 1.35rem !important;
+            height: auto !important;
+        }
+
+        .notion-column {
+            display: contents;
+        }
+
+        .notion-column-list {
+            flex-direction: column;
+        }
+
+        #block-a299798fc12b4acc8ad819f14531beb7 {
+            margin-bottom: 25px;
+        }
+
+        .notion-pill:not(.first) {
+            display: none;
+        }
+    }
+}
