@@ -75,6 +75,7 @@ body {
     font-display: swap;
 }
 
+
 @font-face {
     font-family: "PP Neue Machina";
     src: url(https://raw.githubusercontent.com/abusubi/fonts/main/header/PPNeueMachina/PPNeueMachina-Ultrabold.woff2) format(woff2), url(https://raw.githubusercontent.com/abusubi/fonts/main/header/PPNeueMachina/PPNeueMachina-Ultrabold.woff) format(woff);
