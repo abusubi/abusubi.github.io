@@ -64,24 +64,24 @@ Powered by Super.so
 }
 
 @font-face {
-    font-family: "Merriweather";
-    src: url(https://abusubi.github.io/fonts/woff/Merriweather-Regular.woff2) format(woff2), url(https://abusubi.github.io/fonts/woff/Merriweather-Regular.woff) format(woff);
+    font-family: 'Merriweather';
+    src: url('https://abusubi.github.io/fonts/woff/Merriweather-Regular.woff2') format(woff2), url('https://abusubi.github.io/fonts/woff/Merriweather-Regular.woff') format(woff);
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Merriweather";
-    src: url(https://abusubi.github.io/fonts/woff/Merriweather-Light.woff2) format(woff2), url(https://abusubi.github.io/fonts/woff/Merriweather-Light.woff) format(woff);
+    font-family: 'Merriweather';
+    src: url('https://abusubi.github.io/fonts/woff/Merriweather-Light.woff2') format(woff2), url('https://abusubi.github.io/fonts/woff/Merriweather-Light.woff') format(woff);
     font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Merriweather";
-    src: url(https://abusubi.github.io/fonts/woff/Merriweather-Bold.woff2) format(woff2), url(https://abusubi.github.io/fonts/woff/Merriweather-Bold.woff) format(woff);
+    font-family: 'Merriweather';
+    src: url('https://abusubi.github.io/fonts/woff/Merriweather-Bold.woff2') format(woff2), url('https://abusubi.github.io/fonts/woff/Merriweather-Bold.woff') format(woff);
     font-weight: 500;
     font-style: normal;
     font-display: swap;
