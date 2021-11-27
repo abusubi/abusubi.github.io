@@ -65,7 +65,7 @@ Powered by Super.so
 
 @font-face {
     font-family: "Merriweather";
-    src: url(https://abusubi.github.io/fonts/Merriweather-Regular.ttf) format(woff2), url(https://www.quantamagazine.org/fonts/pangram-medium-webfont.woff2) format(woff);
+    src: url(https://abusubi.github.io/fonts/woff/Merriweather-Regular.woff2) format(woff2), url(https://abusubi.github.io/fonts/woff/Merriweather-Regular.woff) format(woff);
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -73,8 +73,16 @@ Powered by Super.so
 
 @font-face {
     font-family: "Merriweather";
-    src: url(https://https://www.quantamagazine.org/fonts/pangram-medium-webfont.woff2) format(woff2), url(https://www.quantamagazine.org/fonts/pangram-medium-webfont.woff2) format(woff);
+    src: url(https://abusubi.github.io/fonts/woff/Merriweather-Light.woff2) format(woff2), url(https://abusubi.github.io/fonts/woff/Merriweather-Light.woff) format(woff);
     font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url(https://abusubi.github.io/fonts/woff/Merriweather-Bold.woff2) format(woff2), url(https://abusubi.github.io/fonts/woff/Merriweather-Bold.woff) format(woff);
+    font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
@@ -1015,12 +1023,12 @@ span.highlighted-color.color-pink {
     
     div[id^="page-case-studies-"] p {
         font-style: normal!important;
-        margin-right: 4rem !important;
+    /*  margin-right: 4rem !important; */
         color: var(--color-text-default)!important;
-        font-family: 'PP Telegraf'!important;
-        font-weight: var(--p-dark-mode-weight)!important;
-        letter-spacing: var(--p-dark-mode-spacing)!important;
-        line-height: 1.7rem !important;
+        font-family: 'Merriweather'!important;
+        font-weight: 400 !important;
+        line-height: 1.8rem !important;
+        font-size: 1rem !important;
     }
     
     div[id^="page-case-studies-"] h3 {
