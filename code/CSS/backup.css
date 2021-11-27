@@ -63,6 +63,22 @@ Powered by Super.so
     font-display: swap;
 }
 
+@font-face {
+    font-family: "Merriweather";
+    src: url(https://abusubi.github.io/fonts/Merriweather-Regular.ttf) format(woff2), url(https://www.quantamagazine.org/fonts/pangram-medium-webfont.woff2) format(woff);
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url(https://https://www.quantamagazine.org/fonts/pangram-medium-webfont.woff2) format(woff2), url(https://www.quantamagazine.org/fonts/pangram-medium-webfont.woff2) format(woff);
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 /* Start Page CSS */
 

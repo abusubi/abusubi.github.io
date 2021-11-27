@@ -107,6 +107,23 @@ body {
     font-display: swap;
 }
 
+
+@font-face {
+    font-family: "Merriweather";
+    src: url(https://https://www.quantamagazine.org/fonts/pangram-medium-webfont.woff2) format(woff2), url(https://www.quantamagazine.org/fonts/pangram-medium-webfont.woff2) format(woff);
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url(https://https://www.quantamagazine.org/fonts/pangram-medium-webfont.woff2) format(woff2), url(https://www.quantamagazine.org/fonts/pangram-medium-webfont.woff2) format(woff);
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
 html {
     font-size: 16px;
 }
@@ -463,8 +480,10 @@ div[id^="page-case-studies-"] p .color-gray {
     font-weight: normal !important;
 }
 
-div[id^="page-case-studies-"] p{
-    
+div[id^="page-case-studies-"] p {
+    font-family: 'Merriweather' !important;
+    line-height: 1rem !important;
+    font-weight: 300 !important;
 }
 
 div[id^="page-case-studies-"] h2 {
