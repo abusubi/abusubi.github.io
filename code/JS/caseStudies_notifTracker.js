@@ -118,7 +118,7 @@ var yellowNotif = function() {
       }
   else {
         console.log('nope');
-        document.getElementById("notif_container").className = "slide-inactive";
+      //  document.getElementById("notif_container").className = "slide-inactive";
       }
 }
 
