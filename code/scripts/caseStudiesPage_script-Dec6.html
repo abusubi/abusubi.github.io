@@ -1,0 +1,43 @@
+super-embed:
+<script>
+//Set dataset-visted value on visted links.
+					var caseStudyBlock = document.getElementById('block-case-studies');
+          var links = caseStudyBlock.getElementsByTagName('a');
+					var counter = 0;
+          for (i=0;i<links.length;i++) {   
+            var link = links[i];
+						link.dataset.visited = false;
+            if (link.host == window.location.host
+              && localStorage.getItem('visited-' + link.pathname)) {
+                link.dataset.visited = true;
+                counter++;
+              }
+					//	else {
+					//		link.dataset.visited = false;
+          }
+          console.log(counter);
+          localStorage.setItem('caseStudyCount', counter);
+
+//Count case-studies article links from front page hidden doc.
+					const linkList = document.body.querySelectorAll('a.notion-link.notion-breadcrumb__item[href*="/case-studies/"]');
+					console.log(linkList);
+					const linkCount = document.body.querySelectorAll('a[href*="/case-studies/"]').length;
+//Counts total "Case Study" links less "Featured Case Studies".
+					linkCountTotal = linkCount;
+					console.log(linkCountTotal);
+					localStorage.setItem('landingLinkCount', linkCountTotal);
+
+</script>
+
+// Front page backup
+/*
+
+//Count case-studies article links from front page hidden doc.
+var caseStudyBlock = document.getElementById('block-case-studies');
+const linkCount = caseStudyBlock.querySelectorAll('[href*="/case-studies/"]').length;
+//Counts total "Case Study" links less "Featured Case Studies".
+linkCountTotal = linkCount;
+console.log(linkCountTotal);
+localStorage.setItem('landingLinkCount', linkCountTotal);
+
+*/
